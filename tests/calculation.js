@@ -38,6 +38,12 @@ suite("dist", () => {
 	});
 });
 
+suite("exp", () => {
+	benchmark("p5.exp", () => {
+		p5.prototype.exp(1.2);
+	});
+});
+
 suite("floor", () => {
 	benchmark("p5.floor", () => {
 		p5.prototype.floor(1.2);
@@ -47,6 +53,12 @@ suite("floor", () => {
 suite("lerp", () => {
 	benchmark("p5.lerp", () => {
 		p5.prototype.lerp(0.5, 0, 100);
+	});
+});
+
+suite("log", () => {
+	benchmark("p5.log", () => {
+		p5.prototype.log(1.2);
 	});
 });
 
@@ -62,9 +74,45 @@ suite("map", () => {
 	});
 });
 
+suite("max", () => {
+	benchmark("p5.max", () => {
+		p5.prototype.max(0.2, 0, 1, 0, 100);
+	});
+
+	benchmark("p5.max (Array)", () => {
+		p5.prototype.max([0.2, 0, 1, 0, 100]);
+	});
+});
+
+suite("min", () => {
+	benchmark("p5.min", () => {
+		p5.prototype.min(0.2, 0, 1, 0, 100);
+	});
+
+	benchmark("p5.min (Array)", () => {
+		p5.prototype.min([0.2, 0, 1, 0, 100]);
+	});
+});
+
 suite("norm", () => {
 	benchmark("p5.norm", () => {
 		p5.prototype.norm(50, 0, 100);
+	});
+});
+
+suite("pow", () => {
+	benchmark("p5.pow", () => {
+		p5.prototype.pow(1.2, 3);
+	});
+});
+
+suite("round", () => {
+	benchmark("p5.round", () => {
+		p5.prototype.round(22.2);
+	});
+
+	benchmark("p5.round with decimals", () => {
+		p5.prototype.round(22.2, 10);
 	});
 });
 
