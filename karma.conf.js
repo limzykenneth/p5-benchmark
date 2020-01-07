@@ -19,13 +19,18 @@ module.exports = function(config) {
 		files: [
 			"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js",
 			"https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.7.2/bluebird.min.js",
+			"wasm/p5.wasm.js",
+			{pattern: "wasm/index.bundle.js", included: false},
+			{pattern: "wasm/*.wasm", included: false},
 			"tests/*.js"
 		],
 
 		proxies: {
+			"/wasm/": "/base/wasm/"
 		},
 
 		mime: {
+			"application/wasm": ["wasm"]
 		},
 
 		// list of files / patterns to exclude
