@@ -4,3 +4,6 @@ node_js:
 dist: xenial
 services:
   - xvfb
+branches:
+  only:
+    - master
