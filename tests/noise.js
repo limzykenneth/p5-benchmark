@@ -31,10 +31,10 @@ suite("noise", () => {
 	});
 
 	benchmark("p5.wasm.noise 2D", () => {
-		p5.prototype.wasm.noise(1.2, 2.2);
+		p5.prototype.wasm.noise2d(1.2, 2.2);
 	});
 
 	benchmark("p5.wasm.noise 3D", () => {
-		p5.prototype.wasm.noise(1.2, 2.2, 3.2);
+		p5.prototype.wasm.noise3d(1.2, 2.2, 3.2);
 	});
 });
