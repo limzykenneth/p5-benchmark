@@ -13,7 +13,7 @@
 // }
 // BUSY WORK END
 
-suite.only("noise", () => {
+suite("noise", () => {
 	benchmark("p5.noise", () => {
 		p5.prototype.noise(1.2);
 	});
