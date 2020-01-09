@@ -49,6 +49,10 @@ suite("dist", () => {
 		p5.prototype.dist(2, 4, 6, 8);
 	});
 
+	benchmark("p5.dist 3D", () => {
+		p5.prototype.dist(2, 4, 6, 8, 10, 12);
+	});
+
 	benchmark("p5.wasm.dist", () => {
 		p5.prototype.wasm.dist(2, 4, 6, 8);
 	});
@@ -109,8 +113,16 @@ suite("map", () => {
 		p5.prototype.map(0.2, 0, 1, 0, 100);
 	});
 
+	benchmark("p5.map constrained", () => {
+		p5.prototype.map(1.2, 0, 1, 0, 100, true);
+	});
+
 	benchmark("p5.wasm.map", () => {
 		p5.prototype.wasm.map(0.2, 0, 1, 0, 100);
+	});
+
+	benchmark("p5.wasm.map constrained", () => {
+		p5.prototype.wasm.map(1.2, 0, 1, 0, 100, true);
 	});
 });
 
@@ -183,8 +195,8 @@ suite("sqrt", () => {
 	});
 });
 
+// Not released yet
 suite("fract", () => {
-	// UNRELEASED
 	// benchmark("p5.fract", () => {
 	// 	p5.prototype.fract(1.2);
 	// });
