@@ -56,6 +56,10 @@ suite("dist", () => {
 	benchmark("p5.wasm.dist", () => {
 		p5.prototype.wasm.dist(2, 4, 6, 8);
 	});
+
+	benchmark("p5.wasm.dist 3D", () => {
+		p5.prototype.wasm.dist3d(2, 4, 6, 8, 10, 12);
+	});
 });
 
 suite("exp", () => {
