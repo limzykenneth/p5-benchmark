@@ -149,6 +149,7 @@ suite("min", () => {
 		p5.prototype.min([0.2, 0, 1, 0, 100]);
 	});
 });
+
 suite("norm", () => {
 	benchmark("p5.norm", () => {
 		p5.prototype.norm(50, 0, 100);
@@ -176,6 +177,14 @@ suite("round", () => {
 
 	benchmark("p5.round with decimals", () => {
 		p5.prototype.round(22.2, 10);
+	});
+
+	benchmark("p5.wasm.round", () => {
+		p5.prototype.wasm.round(22.2);
+	});
+
+	benchmark("p5.wasm.round with decimals", () => {
+		p5.prototype.wasm.round_decimal(22.2, 10);
 	});
 });
 
