@@ -7,3 +7,11 @@ services:
 branches:
   only:
     - master
+deploy:
+  provider: pages
+  edge: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: ./site/dist/
+  on:
+    branch: master
