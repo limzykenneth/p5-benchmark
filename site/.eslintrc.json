@@ -1,6 +1,7 @@
 {
 	"globals": {
 		"moment": true,
-		"_": true
+		"_": true,
+		"Chart": true
     }
 }
