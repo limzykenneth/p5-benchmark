@@ -7,14 +7,13 @@ services:
 branches:
   only:
     - master
-# before_deploy: cd site && npm install && npm run build
+before_deploy: cd site && npm install && npm run build
 deploy:
-  skip_cleanup: true
   provider: pages
   edge: true
   github_token: $GITHUB_TOKEN
+  local_dir: ./dist/
   keep_history: true
-  local_dir: ./site/dist/
   on:
     branch: master
     # tags: true

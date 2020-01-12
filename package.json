@@ -16,8 +16,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "karma start",
-    "posttest": "cd site && npm install && npm run build"
+    "test": "karma start"
   },
   "author": "Kenneth Lim <limzy.kenneth@gmail.com> (https://designerken.be/)",
   "license": "BSD-2-Clause"
