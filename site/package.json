@@ -5,9 +5,9 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prebuild": "rm -f dist/*",
+    "prebuild": "rm -rf dist/*",
     "build": "parcel build index.html",
-    "prewatch": "rm -f dist/*",
+    "prewatch": "rm -rf dist/*",
     "watch": "parcel index.html",
     "prerelease": "npm run build"
   },
