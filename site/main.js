@@ -1,7 +1,13 @@
 fetch("./assets/results/benchmark.json").then((res) => res.json()).then((bench) => {
 	const benchmarkTemplate = _.template(document.querySelector("#benchmark-template").innerHTML);
 
-	let results = _.reduce(bench.results, (col, result) => {
+	const meta = bench.meta;
+	meta.date = moment(meta.date);
+	meta.formattedDate = function(){
+		return meta.date.format("MMMM Do YYYY, h:mm:ss a");
+	};
+
+	const results = _.reduce(bench.results, (col, result) => {
 		if(!_.isObject(col[result.suite])){
 			col[result.suite] = {};
 		}
@@ -15,7 +21,7 @@ fetch("./assets/results/benchmark.json").then((res) => res.json()).then((bench) 
 	}, {});
 
 	const html = benchmarkTemplate({
-		meta: bench.meta,
+		meta,
 		results
 	});
 	document.querySelector("#benchmarks").innerHTML += html;

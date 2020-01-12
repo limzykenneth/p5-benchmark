@@ -34,7 +34,7 @@
 	<script id="benchmark-template" type="text/template">
 		<article class="benchmark">
 			<h2>p5.js version: <%= meta.version %></h2>
-			<h2>Date: <%= moment(meta.date).format("MMMM Do YYYY, h:mm:ss a") %></h2>
+			<h2>Date: <%= meta.formattedDate() %></h2>
 
 			<%
 			_.each(results, (result, key) => {
@@ -56,6 +56,8 @@
 					});
 				});
 				%>
+				</div>
+				<div class="graph">
 				</div>
 				<%
 			});
