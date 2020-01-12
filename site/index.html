@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-gb">
 <head>
-	<title>Untitled</title>
+	<title>p5.js Benchmarks</title>
 	<meta charset="utf-8">
 	<meta name="author" content="Kenneth Lim">
 	<meta name="description" content="">
@@ -14,13 +14,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="./style.less">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" integrity="sha256-G7A4JrJjJlFqP0yamznwPjAApIKPkadeHfyIwiaa9e0=" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div id="page-content">
+		<header>
+			<h1>p5.js Benchmarks</h1>
+		</header>
 
+		<section id="benchmarks">
+		</section>
 	</div>
+
+	<script id="benchmark-template" type="text/template">
+		<article class="benchmark">
+			<h2>p5.js version: <%= meta.version %></h2>
+			<h2>Date: <%= moment(meta.date).format("MMMM Do YYYY, h:mm:ss a") %></h2>
+
+			<%
+			_.each(results, (result, key) => {
+				%>
+				<div class="result">
+				<%
+				print(`<h3>Suite: ${key}</h3>`);
+
+				_.each(result, (r, k) => {
+					print(`<h4>Name: ${k}</h4>`);
+
+					_.each(r, (r2) => {
+						%>
+						<p>
+							<%= r2.browser %><br>
+							Operations per second: <%= r2.opsPerSecond %>
+						</p>
+						<%
+					});
+				});
+				%>
+				</div>
+				<%
+			});
+			%>
+		</article>
+	</script>
 
 	<script src="./main.js"></script>
 </body>

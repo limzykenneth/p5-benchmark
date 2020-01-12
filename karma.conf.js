@@ -1,3 +1,5 @@
+const moment = require("moment");
+
 module.exports = function(config) {
 	config.set({
 		// If using busyWork function and karma is giving timeout because of the
@@ -85,11 +87,7 @@ module.exports = function(config) {
 					meta: {
 						title: "p5.js Benchmarks",
 						version: "0.10.2",
-						date: [
-							date.toLocaleDateString(),
-							date.toLocaleTimeString(),
-							date.toString().match(/\(([A-Za-z\s].*)\)/)[1]
-						].join(" ")
+						date: moment().toISOString()
 					},
 					results: results,
 					summary: {}
