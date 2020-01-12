@@ -4,6 +4,9 @@ node_js:
 dist: xenial
 services:
   - xvfb
+addons:
+  firefox: latest
+  chrome: stable
 branches:
   only:
     - master
