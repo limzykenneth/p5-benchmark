@@ -1,4 +1,4 @@
-fetch("./assets/results/benchmark.json").then((res) => res.json()).then((bench) => {
+fetch("./assets/results/benchmark-0.10.2.json").then((res) => res.json()).then((bench) => {
 	const benchmarkTemplate = _.template(document.querySelector("#benchmark-template").innerHTML);
 
 	const meta = bench.meta;

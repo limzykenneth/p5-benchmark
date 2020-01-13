@@ -19,5 +19,6 @@
     "test": "karma start"
   },
   "author": "Kenneth Lim <limzy.kenneth@gmail.com> (https://designerken.be/)",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "p5js_version": "0.10.2"
 }
