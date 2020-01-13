@@ -42,42 +42,37 @@ fetch("./assets/results/benchmark.json").then((res) => res.json()).then((bench) 
 		'rgba(153, 102, 255, 1)',
 		'rgba(255, 159, 64, 1)'
 	];
+	const browserList = _.sortBy(_.uniq(_.map(bench.results, (result) => result.browser)));
 
-	const labels = _.reduce(bench.results, (col, result) => {
-		if(!_.find(col, (el) => el === result.browser)){
-			col.push(result.browser);
-		}
-		return col;
-	}, []);
-
-	console.log(labels);
 	_.each(results, (result, key) => {
 		console.log(result);
-		const ctx = document.getElementById(key).getContext("2d");
-		let colorCount = 0;
 
-		const datasets = _.reduce(result, (col, r, k) => {
-			col.push({
-				label: k,
-				data: _.reduce(r, (c, r2) => {
-					const index = _.indexOf(labels, r2.browser)
-					c[index] = r2.opsPerSecond;
-					return c;
-				}, []),
-				backgroundColor: [
-					backgroundColors[colorCount],
-					backgroundColors[colorCount],
-				],
-				borderColor: [
-					borderColors[colorCount],
-					borderColors[colorCount],
-				],
-				borderWidth: 1
-			});
-
-			colorCount++;
+		const labels = _.reduce(result, (col, r, key) => {
+			col.push(key);
 			return col;
 		}, []);
+
+		const ctx = document.getElementById(key).getContext("2d");
+
+		const datasets = _.map(browserList, (browser, i) => {
+			return _.reduce(result, (col, r) => {
+				_.each(r, (r2) => {
+					if(r2.browser === browser){
+						col.label = r2.browser;
+						if(!Array.isArray(col.data)){
+							col.data = [];
+						}
+						col.data.push(r2.opsPerSecond);
+					}
+				});
+
+				col.backgroundColor = backgroundColors[i];
+				col.borderColor = borderColors[i];
+				col.borderWidth = 1;
+
+				return col;
+			}, {});
+		});
 
 		new Chart(ctx, {
 			type: "bar",
