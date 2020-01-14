@@ -1,23 +1,5 @@
 /* global abs, ceil, constrain, dist, exp, floor, lerp, log, mag, map, max, min, norm, pow, round, sq, sqrt */
 
-// BUSY WORK START
-// Busy work to achieve sync promise (karma have no way of async startup)
-// Only use if you absolutely need some promise to resolve first!
-// busyWork([]);
-
-// function busyWork(promises){
-// 	const p = Promise.all(promises);
-
-// 	let work = true;
-// 	while(work){
-// 		work = p.isFulfilled();
-// 	}
-// }
-// BUSY WORK END
-
-new p5();
-
-// Benchmarks
 suite("abs", () => {
 	benchmark("p5.abs", () => {
 		abs(1.2);
