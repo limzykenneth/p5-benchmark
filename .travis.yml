@@ -4,6 +4,19 @@ node_js:
 dist: xenial
 services:
   - xvfb
+addons:
+  firefox: latest
+  chrome: stable
 branches:
   only:
     - master
+before_deploy: cd site && npm install && npm run build
+deploy:
+  provider: pages
+  edge: true
+  github_token: $GITHUB_TOKEN
+  local_dir: ./dist/
+  keep_history: true
+  on:
+    branch: master
+    # tags: true

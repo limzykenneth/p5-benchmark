@@ -1,3 +1,5 @@
+/* global noise */
+
 // BUSY WORK START
 // Busy work to achieve sync promise (karma have no way of async startup)
 // Only use if you absolutely need some promise to resolve first!
@@ -13,17 +15,19 @@ function busyWork(promises){
 }
 // BUSY WORK END
 
+new p5();
+
 suite("noise", () => {
 	benchmark("p5.noise", () => {
-		p5.prototype.noise(1.2);
+		noise(1.2);
 	});
 
 	benchmark("p5.noise 2D", () => {
-		p5.prototype.noise(1.2, 2.2);
+		noise(1.2, 2.2);
 	});
 
 	benchmark("p5.noise 3D", () => {
-		p5.prototype.noise(1.2, 2.2, 3.2);
+		noise(1.2, 2.2, 3.2);
 	});
 
 	benchmark("p5.wasm.noise", () => {
