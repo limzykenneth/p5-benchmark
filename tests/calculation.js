@@ -1,4 +1,4 @@
-/* global abs, ceil, constrain, dist, exp, floor, lerp, log, mag, map, max, min, norm, pow, round, sq, sqrt */
+/* global wasm, abs, ceil, constrain, dist, exp, floor, lerp, log, mag, map, max, min, norm, pow, round, sq, sqrt */
 
 // BUSY WORK START
 // Busy work to achieve sync promise (karma have no way of async startup)
@@ -24,7 +24,7 @@ suite("abs", () => {
 	});
 
 	benchmark("p5.wasm.abs", () => {
-		p5.prototype.wasm.abs(1.2);
+		wasm.abs(1.2);
 	});
 });
 
@@ -34,7 +34,7 @@ suite("ceil", () => {
 	});
 
 	benchmark("p5.wasm.ceil", () => {
-		p5.prototype.wasm.ceil(1.2);
+		wasm.ceil(1.2);
 	});
 });
 
@@ -44,7 +44,7 @@ suite("constrain", () => {
 	});
 
 	benchmark("p5.wasm.constrain", () => {
-		p5.prototype.wasm.constrain(1.2, 0, 1);
+		wasm.constrain(1.2, 0, 1);
 	});
 });
 
@@ -58,11 +58,11 @@ suite("dist", () => {
 	});
 
 	benchmark("p5.wasm.dist", () => {
-		p5.prototype.wasm.dist(2, 4, 6, 8);
+		wasm.dist(2, 4, 6, 8);
 	});
 
 	benchmark("p5.wasm.dist 3D", () => {
-		p5.prototype.wasm.dist3d(2, 4, 6, 8, 10, 12);
+		wasm.dist3d(2, 4, 6, 8, 10, 12);
 	});
 });
 
@@ -72,7 +72,7 @@ suite("exp", () => {
 	});
 
 	benchmark("p5.wasm.exp", () => {
-		p5.prototype.wasm.exp(1.2);
+		wasm.exp(1.2);
 	});
 });
 
@@ -82,7 +82,7 @@ suite("floor", () => {
 	});
 
 	benchmark("p5.wasm.floor", () => {
-		p5.prototype.wasm.floor(1.2);
+		wasm.floor(1.2);
 	});
 });
 
@@ -92,7 +92,7 @@ suite("lerp", () => {
 	});
 
 	benchmark("p5.wasm.lerp", () => {
-		p5.prototype.wasm.lerp(0.5, 0, 100);
+		wasm.lerp(0.5, 0, 100);
 	});
 });
 
@@ -102,7 +102,7 @@ suite("log", () => {
 	});
 
 	benchmark("p5.wasm.log", () => {
-		p5.prototype.wasm.log(1.2);
+		wasm.log(1.2);
 	});
 });
 
@@ -112,7 +112,7 @@ suite("mag", () => {
 	});
 
 	benchmark("p5.wasm.mag", () => {
-		p5.prototype.wasm.mag(3, 4);
+		wasm.mag(3, 4);
 	});
 });
 
@@ -126,11 +126,11 @@ suite("map", () => {
 	});
 
 	benchmark("p5.wasm.map", () => {
-		p5.prototype.wasm.map(0.2, 0, 1, 0, 100);
+		wasm.map(0.2, 0, 1, 0, 100);
 	});
 
 	benchmark("p5.wasm.map constrained", () => {
-		p5.prototype.wasm.map(1.2, 0, 1, 0, 100, true);
+		wasm.map(1.2, 0, 1, 0, 100, true);
 	});
 });
 
@@ -160,7 +160,7 @@ suite("norm", () => {
 	});
 
 	benchmark("p5.wasm.norm", () => {
-		p5.prototype.wasm.norm(50, 0, 100);
+		wasm.norm(50, 0, 100);
 	});
 });
 
@@ -170,7 +170,7 @@ suite("pow", () => {
 	});
 
 	benchmark("p5.wasm.pow", () => {
-		p5.prototype.wasm.pow(1.2, 3);
+		wasm.pow(1.2, 3);
 	});
 });
 
@@ -184,11 +184,11 @@ suite("round", () => {
 	});
 
 	benchmark("p5.wasm.round", () => {
-		p5.prototype.wasm.round(22.2);
+		wasm.round(22.2);
 	});
 
 	benchmark("p5.wasm.round with decimals", () => {
-		p5.prototype.wasm.round_decimal(22.2, 10);
+		wasm.round_decimal(22.2, 10);
 	});
 });
 
@@ -198,7 +198,7 @@ suite("sq", () => {
 	});
 
 	benchmark("p5.wasm.sq", () => {
-		p5.prototype.wasm.sq(1.2);
+		wasm.sq(1.2);
 	});
 });
 
@@ -208,17 +208,17 @@ suite("sqrt", () => {
 	});
 
 	benchmark("p5.wasm.sqrt", () => {
-		p5.prototype.wasm.sqrt(1.2);
+		wasm.sqrt(1.2);
 	});
 });
 
 // Not released yet
 suite("fract", () => {
 	// benchmark("p5.fract", () => {
-	// 	p5.prototype.fract(1.2);
+	// 	fract(1.2);
 	// });
 
 	benchmark("p5.wasm.fract", () => {
-		p5.prototype.wasm.fract(1.2);
+		wasm.fract(1.2);
 	});
 });

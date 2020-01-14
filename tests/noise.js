@@ -1,4 +1,4 @@
-/* global noise */
+/* global wasm, noise */
 
 // BUSY WORK START
 // Busy work to achieve sync promise (karma have no way of async startup)
@@ -31,14 +31,14 @@ suite("noise", () => {
 	});
 
 	benchmark("p5.wasm.noise", () => {
-		p5.prototype.wasm.noise(1.2);
+		wasm.noise(1.2);
 	});
 
 	benchmark("p5.wasm.noise 2D", () => {
-		p5.prototype.wasm.noise2d(1.2, 2.2);
+		wasm.noise2d(1.2, 2.2);
 	});
 
 	benchmark("p5.wasm.noise 3D", () => {
-		p5.prototype.wasm.noise3d(1.2, 2.2, 3.2);
+		wasm.noise3d(1.2, 2.2, 3.2);
 	});
 });
