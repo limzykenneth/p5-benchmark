@@ -1,22 +1,5 @@
 /* global wasm, noise */
 
-// BUSY WORK START
-// Busy work to achieve sync promise (karma have no way of async startup)
-// Only use if you absolutely need some promise to resolve first!
-busyWork([window.p5WasmReady]);
-
-function busyWork(promises){
-	const p = Promise.all(promises);
-
-	let work = true;
-	while(work){
-		work = p.isFulfilled();
-	}
-}
-// BUSY WORK END
-
-new p5();
-
 suite("noise", () => {
 	benchmark("p5.noise", () => {
 		noise(1.2);
