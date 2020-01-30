@@ -49,6 +49,17 @@ suite("Vector.toString", () => {
 			v = createVector(1.2, 2.2, 3.2);
 		}
 	});
+
+	benchmark("p5.wasm.Vector.toString", () => {
+		v.to_string();
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
 });
 
 suite("Vector.set", () => {
@@ -87,6 +98,52 @@ suite("Vector.set", () => {
 			v = createVector(1.2, 2.2, 3.2);
 		}
 	});
+
+	benchmark("p5.wasm.Vector.set vector", () => {
+		v.set_vector(v2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+			v2 = wasm.create_vector_3d(4.2, 5.2, 6.2);
+		},
+		teardown(){
+			v.free();
+			v2.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.set 1D", () => {
+		v.set_1d(4.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.set 2D", () => {
+		v.set_2d(4.2, 5.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.set 3D", () => {
+		v.set_3d(4.2, 5.2, 6.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
 });
 
 suite("Vector.copy", () => {
@@ -98,6 +155,18 @@ suite("Vector.copy", () => {
 	}, {
 		setup(){
 			v = createVector(1.2, 2.2, 3.2);
+		}
+	});
+
+	benchmark("p5.wasm.Vector.copy", () => {
+		v2 = v.copy();
+		v2.free();
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
 		}
 	});
 });
@@ -138,6 +207,53 @@ suite("Vector.add", () => {
 			v = createVector(1.2, 2.2, 3.2);
 		}
 	});
+
+	// WASM
+	benchmark("p5.wasm.Vector.add vector", () => {
+		v.add_vector(v2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+			v2 = wasm.create_vector_3d(4.2, 5.2, 6.2);
+		},
+		teardown(){
+			v.free();
+			v2.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.add 1D", () => {
+		v.add_1d(4.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.add 2D", () => {
+		v.add_2d(4.2, 5.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.add 3D", () => {
+		v.add_3d(4.2, 5.2, 6.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
 });
 
 suite("Vector.sub", () => {
@@ -176,6 +292,53 @@ suite("Vector.sub", () => {
 			v = createVector(1.2, 2.2, 3.2);
 		}
 	});
+
+	// WASM
+	benchmark("p5.wasm.Vector.sub vector", () => {
+		v.sub_vector(v2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+			v2 = wasm.create_vector_3d(4.2, 5.2, 6.2);
+		},
+		teardown(){
+			v.free();
+			v2.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.sub 1D", () => {
+		v.sub_1d(4.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.sub 2D", () => {
+		v.sub_2d(4.2, 5.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.sub 3D", () => {
+		v.sub_3d(4.2, 5.2, 6.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
 });
 
 suite("Vector.mult", () => {
@@ -203,6 +366,18 @@ suite("Vector.mult", () => {
 	}, {
 		setup(){
 			v = createVector(1.2, 2.2, 3.2);
+		}
+	});
+
+	// WASM
+	benchmark("p5.wasm.Vector.mult", () => {
+		v.mult(2.0);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
 		}
 	});
 });
@@ -234,6 +409,17 @@ suite("Vector.div", () => {
 			v = createVector(1.2, 2.2, 3.2);
 		}
 	});
+
+	benchmark("p5.wasm.Vector.div", () => {
+		v.div(2.0);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
 });
 
 suite("Vector.mag", () => {
@@ -247,6 +433,17 @@ suite("Vector.mag", () => {
 			v = createVector(1.2, 2.2, 3.2);
 		}
 	});
+
+	benchmark("p5.wasm.Vector.mag", () => {
+		v2 = v.mag();
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
 });
 
 suite("Vector.magSq", () => {
@@ -258,6 +455,17 @@ suite("Vector.magSq", () => {
 	}, {
 		setup(){
 			v = createVector(1.2, 2.2, 3.2);
+		}
+	});
+
+	benchmark("p5.wasm.Vector.magSq", () => {
+		v2 = v.mag_sq();
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
 		}
 	});
 });
@@ -284,6 +492,53 @@ suite("Vector.dot", () => {
 			v2 = createVector(4.2, 5.2, 6.2);
 		}
 	});
+
+	// WASM
+	benchmark("p5.wasm.Vector.dot vector", () => {
+		v3 = v.dot_vector(v2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+			v2 = wasm.create_vector_3d(4.2, 5.2, 6.2);
+		},
+		teardown(){
+			v.free();
+			v2.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.dot 1D", () => {
+		v3 = v.dot_1d(4.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.dot 2D", () => {
+		v3 = v.dot_2d(4.2, 5.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.dot 3D", () => {
+		v3 = v.dot_3d(4.2, 5.2, 6.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
 });
 
 suite("Vector.cross", () => {
@@ -306,6 +561,20 @@ suite("Vector.cross", () => {
 		setup(){
 			v = createVector(1.2, 2.2, 3.2);
 			v2 = createVector(4.2, 5.2, 6.2);
+		}
+	});
+
+	benchmark("p5.wasm.Vector.cross", () => {
+		v3 = v.cross(v2);
+		v3.free();
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+			v2 = wasm.create_vector_3d(4.2, 5.2, 6.2);
+		},
+		teardown(){
+			v.free();
+			v2.free();
 		}
 	});
 });
@@ -332,6 +601,19 @@ suite("Vector.dist", () => {
 			v2 = createVector(4.2, 5.2, 6.2);
 		}
 	});
+
+	benchmark("p5.wasm.Vector.dist", () => {
+		v3 = v.dist(v2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+			v2 = wasm.create_vector_3d(4.2, 5.2, 6.2);
+		},
+		teardown(){
+			v.free();
+			v2.free();
+		}
+	});
 });
 
 suite("Vector.normalize", () => {
@@ -342,6 +624,17 @@ suite("Vector.normalize", () => {
 	}, {
 		setup(){
 			v = createVector(1.2, 2.2, 3.2);
+		}
+	});
+
+	benchmark("p5.wasm.Vector.normalize", () => {
+		v.normalize();
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
 		}
 	});
 });
@@ -356,6 +649,17 @@ suite("Vector.limit", () => {
 			v = createVector(1.2, 2.2, 3.2);
 		}
 	});
+
+	benchmark("p5.wasm.Vector.limit", () => {
+		v.limit(0.5);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
 });
 
 suite("Vector.setMag", () => {
@@ -366,6 +670,17 @@ suite("Vector.setMag", () => {
 	}, {
 		setup(){
 			v = createVector(1.2, 2.2, 3.2);
+		}
+	});
+
+	benchmark("p5.wasm.Vector.setMag", () => {
+		v.set_mag(2.0);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
 		}
 	});
 });
@@ -381,6 +696,17 @@ suite("Vector.heading", () => {
 			v = createVector(1.2, 2.2, 3.2);
 		}
 	});
+
+	benchmark("p5.wasm.Vector.heading", () => {
+		v2 = v.heading();
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
 });
 
 suite("Vector.rotate", () => {
@@ -391,6 +717,17 @@ suite("Vector.rotate", () => {
 	}, {
 		setup(){
 			v = createVector(1.2, 2.2, 3.2);
+		}
+	});
+
+	benchmark("p5.wasm.Vector.rotate", () => {
+		v.rotate(2.0);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
 		}
 	});
 });
@@ -406,6 +743,19 @@ suite("Vector.angleBetween", () => {
 		setup(){
 			v = createVector(1.2, 2.2, 3.2);
 			v2 = createVector(4.2, 5.2, 6.2);
+		}
+	});
+
+	benchmark("p5.wasm.Vector.angleBetween", () => {
+		v3 = v.angle_between(v2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+			v2 = wasm.create_vector_3d(4.2, 5.2, 6.2);
+		},
+		teardown(){
+			v.free();
+			v2.free();
 		}
 	});
 });
@@ -432,6 +782,53 @@ suite("Vector.lerp", () => {
 			v2 = createVector(4.2, 5.2, 6.2);
 		}
 	});
+
+	// WASM
+	benchmark("p5.wasm.Vector.lerp vector", () => {
+		v.lerp_vector(v2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+			v2 = wasm.create_vector_3d(4.2, 5.2, 6.2);
+		},
+		teardown(){
+			v.free();
+			v2.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.lerp 1D", () => {
+		v.lerp_1d(4.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.lerp 2D", () => {
+		v.lerp_2d(4.2, 5.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.lerp 3D", () => {
+		v.lerp_3d(4.2, 5.2, 6.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
 });
 
 suite("Vector.array", () => {
@@ -443,6 +840,17 @@ suite("Vector.array", () => {
 	}, {
 		setup(){
 			v = createVector(1.2, 2.2, 3.2);
+		}
+	});
+
+	benchmark("p5.wasm.Vector.array", () => {
+		v2 = v.array();
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
 		}
 	});
 });
@@ -458,6 +866,53 @@ suite("Vector.equals", () => {
 		setup(){
 			v = createVector(1.2, 2.2, 3.2);
 			v2 = createVector(4.2, 5.2, 6.2);
+		}
+	});
+
+	// WASM
+	benchmark("p5.wasm.Vector.equals vector", () => {
+		v3 = v.equals_vector(v2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+			v2 = wasm.create_vector_3d(4.2, 5.2, 6.2);
+		},
+		teardown(){
+			v.free();
+			v2.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.equals 1D", () => {
+		v3 = v.equals_1d(4.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.equals 2D", () => {
+		v3 = v.equals_2d(4.2, 5.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
+		}
+	});
+
+	benchmark("p5.wasm.Vector.equals 3D", () => {
+		v3 = v.equals_3d(4.2, 5.2, 6.2);
+	}, {
+		setup(){
+			v = wasm.create_vector_3d(1.2, 2.2, 3.2);
+		},
+		teardown(){
+			v.free();
 		}
 	});
 });
