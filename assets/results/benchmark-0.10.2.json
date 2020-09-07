@@ -2,1030 +2,1030 @@
   "meta": {
     "title": "p5.js Benchmarks",
     "version": "0.10.2",
-    "date": "2020-08-01T20:12:16.114Z"
+    "date": "2020-09-07T15:32:27.631Z"
   },
   "results": [
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.add",
       "name": "p5.Vector.add 1D",
-      "opsPerSecond": 345581351.8783368,
-      "marginOfError": "1.7659392690003037%"
+      "opsPerSecond": 348663677.4087118,
+      "marginOfError": "1.7461483246987282%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.add",
       "name": "p5.Vector.add 1D",
-      "opsPerSecond": 73392444.39338066,
-      "marginOfError": "0.7672595741449902%"
+      "opsPerSecond": 72074442.15303412,
+      "marginOfError": "0.3941870587733738%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.add",
       "name": "p5.Vector.add 2D",
-      "opsPerSecond": 332572449.6081861,
-      "marginOfError": "11.024748859425694%"
+      "opsPerSecond": 348410578.36816645,
+      "marginOfError": "1.7119588699487025%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.add",
       "name": "p5.Vector.add 2D",
-      "opsPerSecond": 72317570.88605866,
-      "marginOfError": "0.6490130493358751%"
+      "opsPerSecond": 70114854.49267013,
+      "marginOfError": "0.8536568992963574%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.add",
       "name": "p5.Vector.add 3D",
-      "opsPerSecond": 346508448.24961936,
-      "marginOfError": "1.7520744696521984%"
+      "opsPerSecond": 352726506.47442967,
+      "marginOfError": "1.4840466813450823%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.add",
       "name": "p5.Vector.add 3D",
-      "opsPerSecond": 71578697.58838849,
-      "marginOfError": "0.7313195707220324%"
+      "opsPerSecond": 70503353.7111682,
+      "marginOfError": "0.7158924892948441%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.add",
       "name": "p5.Vector.add vector",
-      "opsPerSecond": 92278841.05364394,
-      "marginOfError": "1.2933664493977917%"
+      "opsPerSecond": 125002518.1488729,
+      "marginOfError": "0.1318184278938389%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.add",
       "name": "p5.Vector.add vector",
-      "opsPerSecond": 61684518.02723985,
-      "marginOfError": "1.0293952447753691%"
+      "opsPerSecond": 61801702.176261544,
+      "marginOfError": "0.5125371158104634%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.angleBetween",
       "name": "p5.Vector.angleBetween",
-      "opsPerSecond": 8643558.576868655,
-      "marginOfError": "0.3455288562230153%"
+      "opsPerSecond": 8974003.69381062,
+      "marginOfError": "0.9868426524257623%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.angleBetween",
       "name": "p5.Vector.angleBetween",
-      "opsPerSecond": 7135184.467587866,
-      "marginOfError": "8.732673676060399%"
+      "opsPerSecond": 7853924.637917465,
+      "marginOfError": "0.9363034191358527%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.array",
       "name": "p5.Vector.array",
-      "opsPerSecond": 63058795.778351404,
-      "marginOfError": "0.2812606165133601%"
+      "opsPerSecond": 65182866.339692816,
+      "marginOfError": "2.8410248822906974%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.array",
       "name": "p5.Vector.array",
-      "opsPerSecond": 57979284.14029937,
-      "marginOfError": "0.27984144833016195%"
+      "opsPerSecond": 62522338.727354735,
+      "marginOfError": "0.7262566050660698%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.copy",
       "name": "p5.Vector.copy",
-      "opsPerSecond": 20089559.643382516,
-      "marginOfError": "0.5256052782854256%"
+      "opsPerSecond": 21117546.000889767,
+      "marginOfError": "0.5240594516913988%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.copy",
       "name": "p5.Vector.copy",
-      "opsPerSecond": 15333714.576773487,
-      "marginOfError": "0.23007828949799217%"
+      "opsPerSecond": 16411267.037410477,
+      "marginOfError": "0.4198225974786026%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.cross",
       "name": "p5.Vector.cross",
-      "opsPerSecond": 19080106.77923219,
-      "marginOfError": "0.31334651077552%"
+      "opsPerSecond": 19245710.25282255,
+      "marginOfError": "2.1772688477878557%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.cross",
       "name": "p5.Vector.cross",
-      "opsPerSecond": 16240602.749047415,
-      "marginOfError": "0.3185281406844151%"
+      "opsPerSecond": 17074762.65402844,
+      "marginOfError": "0.48402818451818164%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.cross",
       "name": "p5.Vector.cross static",
-      "opsPerSecond": 19001258.835419275,
-      "marginOfError": "2.322393294589062%"
+      "opsPerSecond": 19601213.031157564,
+      "marginOfError": "0.3245431470288943%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.cross",
       "name": "p5.Vector.cross static",
-      "opsPerSecond": 15842474.900859047,
-      "marginOfError": "0.3459108615344973%"
+      "opsPerSecond": 16369386.894924453,
+      "marginOfError": "0.49303999850766844%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.dist",
       "name": "p5.Vector.dist",
-      "opsPerSecond": 21325605.938492373,
-      "marginOfError": "0.3483764759419911%"
+      "opsPerSecond": 21323236.861952767,
+      "marginOfError": "0.6099223992611615%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.dist",
       "name": "p5.Vector.dist",
-      "opsPerSecond": 13591274.208995527,
-      "marginOfError": "0.17297068146680314%"
+      "opsPerSecond": 13645466.564257117,
+      "marginOfError": "0.24662645631384786%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.dist",
       "name": "p5.Vector.dist static",
-      "opsPerSecond": 20935293.46581874,
-      "marginOfError": "0.883436072014402%"
+      "opsPerSecond": 21332029.22340957,
+      "marginOfError": "1.366910011547285%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.dist",
       "name": "p5.Vector.dist static",
-      "opsPerSecond": 11128894.903784148,
-      "marginOfError": "0.18010069671109688%"
+      "opsPerSecond": 11363252.681617204,
+      "marginOfError": "0.33999534631151757%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.div",
       "name": "p5.Vector.div",
-      "opsPerSecond": 309760742.42217815,
-      "marginOfError": "3.0383573208668047%"
+      "opsPerSecond": 304512623.37662333,
+      "marginOfError": "2.015506058666027%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.div",
       "name": "p5.Vector.div",
-      "opsPerSecond": 107697464.764458,
-      "marginOfError": "0.20355404889150097%"
+      "opsPerSecond": 161243203.0534352,
+      "marginOfError": "0.12925529483493547%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.div",
       "name": "p5.Vector.div static",
-      "opsPerSecond": 20256902.941980902,
-      "marginOfError": "0.5397853539719767%"
+      "opsPerSecond": 20494073.363301735,
+      "marginOfError": "2.3957234581993485%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.div",
       "name": "p5.Vector.div static",
-      "opsPerSecond": 13906507.125211386,
-      "marginOfError": "3.0726387592948954%"
+      "opsPerSecond": 15325473.993496038,
+      "marginOfError": "0.3275839303546019%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.div",
       "name": "p5.Vector.div static target",
-      "opsPerSecond": 54083475.33603094,
-      "marginOfError": "0.12690737567668522%"
+      "opsPerSecond": 110018110.07609622,
+      "marginOfError": "0.6805836373258205%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.div",
       "name": "p5.Vector.div static target",
-      "opsPerSecond": 49440913.64272162,
-      "marginOfError": "2.326277696580937%"
+      "opsPerSecond": 49090045.48900684,
+      "marginOfError": "0.5607226013722351%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.dot",
       "name": "p5.Vector.dot",
-      "opsPerSecond": 39033123.08172722,
-      "marginOfError": "0.291058127392836%"
+      "opsPerSecond": 38510260.969976895,
+      "marginOfError": "0.717489971704982%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.dot",
       "name": "p5.Vector.dot",
-      "opsPerSecond": 31571214.211786922,
-      "marginOfError": "0.8268451398696952%"
+      "opsPerSecond": 32235508.90724106,
+      "marginOfError": "0.1926993891295257%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.dot",
       "name": "p5.Vector.dot static",
-      "opsPerSecond": 33861888.558679774,
-      "marginOfError": "0.2441439649244011%"
+      "opsPerSecond": 33547874.115191992,
+      "marginOfError": "0.33176096903098357%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.dot",
       "name": "p5.Vector.dot static",
-      "opsPerSecond": 25709938.575393192,
-      "marginOfError": "0.46676926283636305%"
+      "opsPerSecond": 26107926.360638153,
+      "marginOfError": "0.1978615807084036%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.equals",
       "name": "p5.Vector.equals",
-      "opsPerSecond": 119038338.58692694,
-      "marginOfError": "0.8845519688204773%"
+      "opsPerSecond": 120421136.67687598,
+      "marginOfError": "0.8718660825306134%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.equals",
       "name": "p5.Vector.equals",
-      "opsPerSecond": 48760689.14185492,
-      "marginOfError": "0.5385589030781335%"
+      "opsPerSecond": 50238949.3783005,
+      "marginOfError": "0.2750482416615579%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.fromAngle",
       "name": "p5.Vector.fromAngle",
-      "opsPerSecond": 22147466.92089978,
-      "marginOfError": "2.0354298865046525%"
+      "opsPerSecond": 22405639.991299655,
+      "marginOfError": "2.463578467839089%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.fromAngle",
       "name": "p5.Vector.fromAngle",
-      "opsPerSecond": 19282816.04244109,
-      "marginOfError": "0.2078949479763601%"
+      "opsPerSecond": 18556637.73731112,
+      "marginOfError": "0.42058617171879503%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.fromAngle",
       "name": "p5.Vector.fromAngle length",
-      "opsPerSecond": 20967710.96923968,
-      "marginOfError": "2.221486197964652%"
+      "opsPerSecond": 22122880.374546163,
+      "marginOfError": "1.563268980258191%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.fromAngle",
       "name": "p5.Vector.fromAngle length",
-      "opsPerSecond": 19267470.607216965,
-      "marginOfError": "0.2564514201863644%"
+      "opsPerSecond": 18625869.87764615,
+      "marginOfError": "0.48286249059215036%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.fromAngles",
       "name": "p5.Vector.fromAngles",
-      "opsPerSecond": 19926915.460776854,
-      "marginOfError": "1.83378766328067%"
+      "opsPerSecond": 19699405.11685437,
+      "marginOfError": "2.469819519360477%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.fromAngles",
       "name": "p5.Vector.fromAngles",
-      "opsPerSecond": 19332298.35628585,
-      "marginOfError": "0.21835772637613735%"
+      "opsPerSecond": 19058252.1484351,
+      "marginOfError": "0.31710323286398984%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.fromAngles",
       "name": "p5.Vector.fromAngles length",
-      "opsPerSecond": 19647207.822494302,
-      "marginOfError": "1.9592618122721377%"
+      "opsPerSecond": 20776047.475508686,
+      "marginOfError": "1.3591839137008368%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.fromAngles",
       "name": "p5.Vector.fromAngles length",
-      "opsPerSecond": 19184379.12360184,
-      "marginOfError": "1.0363671903890082%"
+      "opsPerSecond": 19023843.92271076,
+      "marginOfError": "0.4518255624500697%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.heading",
       "name": "p5.Vector.heading",
-      "opsPerSecond": 501449929.8097944,
-      "marginOfError": "2.1223311552439195%"
+      "opsPerSecond": 460763927.873368,
+      "marginOfError": "1.8077240047055714%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.heading",
       "name": "p5.Vector.heading",
-      "opsPerSecond": 24706400.46207164,
-      "marginOfError": "1.3376479271917756%"
+      "opsPerSecond": 24970700.15149167,
+      "marginOfError": "0.16241072576906967%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.lerp",
       "name": "p5.Vector.lerp",
-      "opsPerSecond": 36005705.9014498,
-      "marginOfError": "0.6427593626312319%"
+      "opsPerSecond": 39076955.741739966,
+      "marginOfError": "0.20687520754391936%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.lerp",
       "name": "p5.Vector.lerp",
-      "opsPerSecond": 34287470.58155827,
-      "marginOfError": "2.6931120317348496%"
+      "opsPerSecond": 35179501.77959025,
+      "marginOfError": "0.49891380807303326%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.lerp",
       "name": "p5.Vector.lerp static",
-      "opsPerSecond": 12677873.106744228,
-      "marginOfError": "0.3152232790651412%"
+      "opsPerSecond": 12786960.052060453,
+      "marginOfError": "0.3023683963325511%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.lerp",
       "name": "p5.Vector.lerp static",
-      "opsPerSecond": 10796396.109026194,
-      "marginOfError": "0.6228028612556668%"
+      "opsPerSecond": 10665454.54092715,
+      "marginOfError": "5.218935651261945%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.limit",
       "name": "p5.Vector.limit",
-      "opsPerSecond": 272386980.98271906,
-      "marginOfError": "2.4845533931972237%"
+      "opsPerSecond": 174208048.7115839,
+      "marginOfError": "1.850310199560564%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.limit",
       "name": "p5.Vector.limit",
-      "opsPerSecond": 157866370.0933098,
-      "marginOfError": "0.24659407618505086%"
+      "opsPerSecond": 158325340.73695913,
+      "marginOfError": "0.20566397155045907%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.mag",
       "name": "p5.Vector.mag",
-      "opsPerSecond": 663899457.0180851,
-      "marginOfError": "9.015692167800783%"
+      "opsPerSecond": 644547880.7937284,
+      "marginOfError": "5.73708801915036%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.mag",
       "name": "p5.Vector.mag",
-      "opsPerSecond": 133558995.90344003,
-      "marginOfError": "0.20260068594865774%"
+      "opsPerSecond": 147507400.73928365,
+      "marginOfError": "0.15052211168232016%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.magSq",
       "name": "p5.Vector.magSq",
-      "opsPerSecond": 647747397.3807887,
-      "marginOfError": "6.095077728350906%"
+      "opsPerSecond": 608219520.7520365,
+      "marginOfError": "6.73093535546789%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.magSq",
       "name": "p5.Vector.magSq",
-      "opsPerSecond": 134259425.1214444,
-      "marginOfError": "0.117811458138852%"
+      "opsPerSecond": 161422550.3874519,
+      "marginOfError": "1.3425039733887665%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.mult",
       "name": "p5.Vector.mult",
-      "opsPerSecond": 283307855.29769814,
-      "marginOfError": "3.717436517014508%"
+      "opsPerSecond": 312739839.76660496,
+      "marginOfError": "1.4606704576916743%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.mult",
       "name": "p5.Vector.mult",
-      "opsPerSecond": 108148456.5675935,
-      "marginOfError": "0.7171418736575067%"
+      "opsPerSecond": 157108525.64102554,
+      "marginOfError": "4.750459392582239%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.mult",
       "name": "p5.Vector.mult static",
-      "opsPerSecond": 20224568.89603425,
-      "marginOfError": "0.47525630338987557%"
+      "opsPerSecond": 20849426.862583213,
+      "marginOfError": "2.923991145015295%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.mult",
       "name": "p5.Vector.mult static",
-      "opsPerSecond": 13390100.184842873,
-      "marginOfError": "0.37070046391844763%"
+      "opsPerSecond": 15110735.037591286,
+      "marginOfError": "0.3789406180870991%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.mult",
       "name": "p5.Vector.mult static target",
-      "opsPerSecond": 54160783.627978474,
-      "marginOfError": "0.15555834776787988%"
+      "opsPerSecond": 113596838.65761738,
+      "marginOfError": "0.2707329354158951%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.mult",
       "name": "p5.Vector.mult static target",
-      "opsPerSecond": 50619663.65073482,
-      "marginOfError": "0.42643374966469355%"
+      "opsPerSecond": 49234607.613028444,
+      "marginOfError": "0.5434198668866155%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.normalize",
       "name": "p5.Vector.normalize",
-      "opsPerSecond": 59344686.05504928,
-      "marginOfError": "0.30433380374852065%"
+      "opsPerSecond": 59444030.4774357,
+      "marginOfError": "0.22691912226757782%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.normalize",
       "name": "p5.Vector.normalize",
-      "opsPerSecond": 55337498.81859501,
-      "marginOfError": "1.825328615916906%"
+      "opsPerSecond": 56145982.12927755,
+      "marginOfError": "0.23825294019012597%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.random2D",
       "name": "p5.Vector.random2D",
-      "opsPerSecond": 8939099.789312398,
-      "marginOfError": "0.4658918562771913%"
+      "opsPerSecond": 9522387.69639893,
+      "marginOfError": "2.122308473204541%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.random2D",
       "name": "p5.Vector.random2D",
-      "opsPerSecond": 7480546.479323884,
-      "marginOfError": "2.5058177125903542%"
+      "opsPerSecond": 7406493.727079718,
+      "marginOfError": "0.28210029702353284%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.random3D",
       "name": "p5.Vector.random3D",
-      "opsPerSecond": 7567128.318183999,
-      "marginOfError": "0.3245861855461598%"
+      "opsPerSecond": 8370523.479522317,
+      "marginOfError": "1.9447114792638234%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.random3D",
       "name": "p5.Vector.random3D",
-      "opsPerSecond": 7565485.444977639,
-      "marginOfError": "1.8682128083513814%"
+      "opsPerSecond": 7248400.903447345,
+      "marginOfError": "0.23383227454614897%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.rotate",
       "name": "p5.Vector.rotate",
-      "opsPerSecond": 14276519.318051662,
-      "marginOfError": "0.11236838753666745%"
+      "opsPerSecond": 14322127.65957447,
+      "marginOfError": "0.18063780936821822%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.rotate",
       "name": "p5.Vector.rotate",
-      "opsPerSecond": 10532767.447033137,
-      "marginOfError": "0.17574126145112118%"
+      "opsPerSecond": 10509585.821002642,
+      "marginOfError": "0.22756188626497836%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.set",
       "name": "p5.Vector.set 1D",
-      "opsPerSecond": 696980829.2651894,
-      "marginOfError": "1.7768741730487023%"
+      "opsPerSecond": 686720549.0573598,
+      "marginOfError": "1.5667058166610004%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.set",
       "name": "p5.Vector.set 1D",
-      "opsPerSecond": 76434573.95299126,
-      "marginOfError": "0.4867103034838935%"
+      "opsPerSecond": 74238854.36375701,
+      "marginOfError": "0.5612464941662513%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.set",
       "name": "p5.Vector.set 2D",
-      "opsPerSecond": 667598527.2187767,
-      "marginOfError": "14.722124443388173%"
+      "opsPerSecond": 685694262.8770278,
+      "marginOfError": "1.4511257521108185%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.set",
       "name": "p5.Vector.set 2D",
-      "opsPerSecond": 75596352.51880571,
-      "marginOfError": "0.6647767643046567%"
+      "opsPerSecond": 73419768.26035945,
+      "marginOfError": "0.5850115840684493%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.set",
       "name": "p5.Vector.set 3D",
-      "opsPerSecond": 695590879.726473,
-      "marginOfError": "1.929239109811971%"
+      "opsPerSecond": 681624966.7582102,
+      "marginOfError": "1.7451767684847082%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.set",
       "name": "p5.Vector.set 3D",
-      "opsPerSecond": 75164771.86045448,
-      "marginOfError": "1.155201537888183%"
+      "opsPerSecond": 72949478.3481737,
+      "marginOfError": "0.5095115397950749%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.set",
       "name": "p5.Vector.set vector",
-      "opsPerSecond": 95479052.36565064,
-      "marginOfError": "0.15362190730302006%"
+      "opsPerSecond": 123980965.87547944,
+      "marginOfError": "1.5771306942660233%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.set",
       "name": "p5.Vector.set vector",
-      "opsPerSecond": 65716823.4561415,
-      "marginOfError": "0.739390448313844%"
+      "opsPerSecond": 66180169.20267095,
+      "marginOfError": "0.22329480248415098%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.setMag",
       "name": "p5.Vector.setMag",
-      "opsPerSecond": 50808766.90052508,
-      "marginOfError": "0.2517698341300936%"
+      "opsPerSecond": 50261096.587111935,
+      "marginOfError": "0.21823580892701674%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.setMag",
       "name": "p5.Vector.setMag",
-      "opsPerSecond": 48517617.86035778,
-      "marginOfError": "0.2741150161282479%"
+      "opsPerSecond": 48659210.556621864,
+      "marginOfError": "0.2867229389060173%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.sub",
       "name": "p5.Vector.sub 1D",
-      "opsPerSecond": 353998382.78247494,
-      "marginOfError": "0.837286499809072%"
+      "opsPerSecond": 336758706.8801221,
+      "marginOfError": "9.267266429399736%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.sub",
       "name": "p5.Vector.sub 1D",
-      "opsPerSecond": 73721993.28531098,
-      "marginOfError": "0.6857104974112375%"
+      "opsPerSecond": 72384092.7941427,
+      "marginOfError": "0.6120534751387338%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.sub",
       "name": "p5.Vector.sub 2D",
-      "opsPerSecond": 355861672.23901993,
-      "marginOfError": "1.1073782285803995%"
+      "opsPerSecond": 354365057.79462147,
+      "marginOfError": "1.4612053955328643%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.sub",
       "name": "p5.Vector.sub 2D",
-      "opsPerSecond": 72582450.52236626,
-      "marginOfError": "0.542165704732881%"
+      "opsPerSecond": 69917022.65177456,
+      "marginOfError": "0.8153337233676826%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.sub",
       "name": "p5.Vector.sub 3D",
-      "opsPerSecond": 346692113.686662,
-      "marginOfError": "1.789811812089725%"
+      "opsPerSecond": 344390480.54837656,
+      "marginOfError": "1.9065830393736323%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.sub",
       "name": "p5.Vector.sub 3D",
-      "opsPerSecond": 71952613.70946863,
-      "marginOfError": "0.7258409314639378%"
+      "opsPerSecond": 70236621.29206493,
+      "marginOfError": "0.6273427238290487%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.sub",
       "name": "p5.Vector.sub vector",
-      "opsPerSecond": 92938415.62977208,
-      "marginOfError": "1.1941995855831227%"
+      "opsPerSecond": 123587275.42471373,
+      "marginOfError": "2.0662346210973648%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.sub",
       "name": "p5.Vector.sub vector",
-      "opsPerSecond": 61748410.35052304,
-      "marginOfError": "1.230550140654316%"
+      "opsPerSecond": 61071717.05878462,
+      "marginOfError": "1.7350736643048221%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "Vector.toString",
       "name": "p5.Vector.toString",
-      "opsPerSecond": 20087019.37834389,
-      "marginOfError": "132.88179073838538%"
+      "opsPerSecond": 8138206.392413315,
+      "marginOfError": "90.49189723770597%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "Vector.toString",
       "name": "p5.Vector.toString",
-      "opsPerSecond": 2494397.5565833454,
-      "marginOfError": "3.1298066842038867%"
+      "opsPerSecond": 2627314.364737281,
+      "marginOfError": "3.096821148846431%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "abs",
       "name": "p5.abs",
-      "opsPerSecond": 778704801.0691981,
-      "marginOfError": "12.759749601073676%"
+      "opsPerSecond": 980075906.1442049,
+      "marginOfError": "8.929163081475798%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "abs",
       "name": "p5.abs",
-      "opsPerSecond": 706679058.7771345,
-      "marginOfError": "2.2329227145949453%"
+      "opsPerSecond": 734449830.784804,
+      "marginOfError": "2.3715762155681017%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "ceil",
       "name": "p5.ceil",
-      "opsPerSecond": 1063696671.4241395,
-      "marginOfError": "1.485866932154565%"
+      "opsPerSecond": 1159886846.6716983,
+      "marginOfError": "2.710120544356859%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "ceil",
       "name": "p5.ceil",
-      "opsPerSecond": 734520514.0401145,
-      "marginOfError": "1.820757032368604%"
+      "opsPerSecond": 726648310.7519724,
+      "marginOfError": "2.2134315151547836%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "constrain",
       "name": "p5.constrain",
-      "opsPerSecond": 677997679.6106079,
-      "marginOfError": "1.4416929613800744%"
+      "opsPerSecond": 684327388.998262,
+      "marginOfError": "1.6628658305521613%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "constrain",
       "name": "p5.constrain",
-      "opsPerSecond": 18242004.265473753,
-      "marginOfError": "11.247148108738847%"
+      "opsPerSecond": 22367671.929149,
+      "marginOfError": "0.7792247244763956%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "createVector",
       "name": "p5.createVector",
-      "opsPerSecond": 54187263.08432323,
-      "marginOfError": "6.321669911523668%"
+      "opsPerSecond": 41549965.57507176,
+      "marginOfError": "1.4346070617441555%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "createVector",
       "name": "p5.createVector",
-      "opsPerSecond": 3088875.02404952,
-      "marginOfError": "0.1625849297557342%"
+      "opsPerSecond": 3010489.0896134814,
+      "marginOfError": "0.17666663601421803%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "createVector",
       "name": "p5.createVector 1D",
-      "opsPerSecond": 45883206.92363634,
-      "marginOfError": "1.245749255033269%"
+      "opsPerSecond": 69952946.36994782,
+      "marginOfError": "5.663922787267616%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "createVector",
       "name": "p5.createVector 1D",
-      "opsPerSecond": 3686567.183462533,
-      "marginOfError": "0.2783610645802645%"
+      "opsPerSecond": 3648379.647399499,
+      "marginOfError": "0.25034167364150667%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "createVector",
       "name": "p5.createVector 2D",
-      "opsPerSecond": 43691281.192524016,
-      "marginOfError": "1.1464329866001044%"
+      "opsPerSecond": 42199697.95225616,
+      "marginOfError": "1.3286667314088207%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "createVector",
       "name": "p5.createVector 2D",
-      "opsPerSecond": 5278581.600240292,
-      "marginOfError": "0.1826888738441566%"
+      "opsPerSecond": 5193079.060969925,
+      "marginOfError": "0.19251178514032855%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "createVector",
       "name": "p5.createVector 3D",
-      "opsPerSecond": 52696037.41369629,
-      "marginOfError": "5.628959751438204%"
+      "opsPerSecond": 46399792.61367634,
+      "marginOfError": "5.939846579245871%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "createVector",
       "name": "p5.createVector 3D",
-      "opsPerSecond": 9155826.09613066,
-      "marginOfError": "1.5385013206665965%"
+      "opsPerSecond": 9429174.804014603,
+      "marginOfError": "0.2992026362786428%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "dist",
       "name": "p5.dist",
-      "opsPerSecond": 17406491.55271194,
-      "marginOfError": "0.322936887286205%"
+      "opsPerSecond": 18024771.734843384,
+      "marginOfError": "0.22448650863972694%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "dist",
       "name": "p5.dist",
-      "opsPerSecond": 11434991.039393134,
-      "marginOfError": "16.389308612524317%"
+      "opsPerSecond": 13466916.016640605,
+      "marginOfError": "13.893528354539445%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "dist",
       "name": "p5.dist 3D",
-      "opsPerSecond": 14118894.774479376,
-      "marginOfError": "0.3481256107060794%"
+      "opsPerSecond": 14648988.572535362,
+      "marginOfError": "0.3680885846831856%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "dist",
       "name": "p5.dist 3D",
-      "opsPerSecond": 11869157.624018481,
-      "marginOfError": "1.2050359655440963%"
+      "opsPerSecond": 10877620.175773788,
+      "marginOfError": "0.5754560340295404%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "exp",
       "name": "p5.exp",
-      "opsPerSecond": 1091553897.0830972,
-      "marginOfError": "0.3192450312079331%"
+      "opsPerSecond": 1180817048.69897,
+      "marginOfError": "2.225803036305605%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "exp",
       "name": "p5.exp",
-      "opsPerSecond": 696948464.7003043,
-      "marginOfError": "1.9771308078133347%"
+      "opsPerSecond": 683210657.8621651,
+      "marginOfError": "1.462429314438854%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "floor",
       "name": "p5.floor",
-      "opsPerSecond": 1088542625.1732488,
-      "marginOfError": "0.21037035641959023%"
+      "opsPerSecond": 1192200592.7419357,
+      "marginOfError": "2.219215762285645%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "floor",
       "name": "p5.floor",
-      "opsPerSecond": 706619734.2412603,
-      "marginOfError": "2.2491106199906663%"
+      "opsPerSecond": 707463191.1595347,
+      "marginOfError": "1.8990326531698583%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "lerp",
       "name": "p5.lerp",
-      "opsPerSecond": 683525680.0878308,
-      "marginOfError": "1.5048096952947079%"
+      "opsPerSecond": 689303770.8202451,
+      "marginOfError": "1.5856087971933133%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "lerp",
       "name": "p5.lerp",
-      "opsPerSecond": 22777095.87194414,
-      "marginOfError": "0.6915151051554069%"
+      "opsPerSecond": 23804563.760718945,
+      "marginOfError": "0.27447277887132626%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "log",
       "name": "p5.log",
-      "opsPerSecond": 1096271202.6090221,
-      "marginOfError": "0.23813758477867064%"
+      "opsPerSecond": 1196241790.3083544,
+      "marginOfError": "2.296479692503299%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "log",
       "name": "p5.log",
-      "opsPerSecond": 713660887.8801866,
-      "marginOfError": "2.2030906291719705%"
+      "opsPerSecond": 690576581.7468061,
+      "marginOfError": "1.7173949958544943%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "mag",
       "name": "p5.mag",
-      "opsPerSecond": 24828196.42857141,
-      "marginOfError": "0.20365422764467214%"
+      "opsPerSecond": 25283277.16443929,
+      "marginOfError": "0.2611648144214464%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "mag",
       "name": "p5.mag",
-      "opsPerSecond": 19345702.817321274,
-      "marginOfError": "3.198150328582249%"
+      "opsPerSecond": 19732628.57715536,
+      "marginOfError": "2.2156138113281543%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "map",
       "name": "p5.map",
-      "opsPerSecond": 708216227.1318775,
-      "marginOfError": "1.8423782784094747%"
+      "opsPerSecond": 685941745.4328876,
+      "marginOfError": "1.7732417869034678%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "map",
       "name": "p5.map",
-      "opsPerSecond": 13626435.858407564,
-      "marginOfError": "1.0049289649432445%"
+      "opsPerSecond": 15036277.483777922,
+      "marginOfError": "8.703810696423568%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "map",
       "name": "p5.map constrained",
-      "opsPerSecond": 686453847.2356384,
-      "marginOfError": "1.841177670658937%"
+      "opsPerSecond": 686793373.6514271,
+      "marginOfError": "1.792220124287996%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "map",
       "name": "p5.map constrained",
-      "opsPerSecond": 10047653.933215909,
-      "marginOfError": "1.1442449101913257%"
+      "opsPerSecond": 9798032.397091098,
+      "marginOfError": "1.6968511283621361%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "max",
       "name": "p5.max",
-      "opsPerSecond": 14075512.859616306,
-      "marginOfError": "1.778366898317945%"
+      "opsPerSecond": 14297306.28495004,
+      "marginOfError": "1.0448004664855688%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "max",
       "name": "p5.max",
-      "opsPerSecond": 8140150.281916672,
-      "marginOfError": "0.23124654036747946%"
+      "opsPerSecond": 8005810.914681005,
+      "marginOfError": "0.7766267807874186%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "max",
       "name": "p5.max (Array)",
-      "opsPerSecond": 5945013.089484456,
-      "marginOfError": "0.30922647095582%"
+      "opsPerSecond": 5641685.786436271,
+      "marginOfError": "1.4835614933783956%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "max",
       "name": "p5.max (Array)",
-      "opsPerSecond": 3186715.973292246,
-      "marginOfError": "0.5008046567368608%"
+      "opsPerSecond": 2852162.5163827008,
+      "marginOfError": "0.7672081033718094%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "min",
       "name": "p5.min",
-      "opsPerSecond": 14111758.358214535,
-      "marginOfError": "1.765153806371516%"
+      "opsPerSecond": 14497146.645199914,
+      "marginOfError": "0.32805951739935263%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "min",
       "name": "p5.min",
-      "opsPerSecond": 7747591.645521197,
-      "marginOfError": "0.2002335561205121%"
+      "opsPerSecond": 7807478.698165427,
+      "marginOfError": "0.34115786026331946%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "min",
       "name": "p5.min (Array)",
-      "opsPerSecond": 5845427.2426917665,
-      "marginOfError": "0.6823379185612604%"
+      "opsPerSecond": 5970732.618555633,
+      "marginOfError": "0.19248173505450145%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "min",
       "name": "p5.min (Array)",
-      "opsPerSecond": 3260678.8800553065,
-      "marginOfError": "0.25133148067440536%"
+      "opsPerSecond": 3043419.6332254577,
+      "marginOfError": "0.3502311035732493%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "noise",
       "name": "p5.noise",
-      "opsPerSecond": 7845931.477927066,
-      "marginOfError": "0.26850058411899896%"
+      "opsPerSecond": 9064470.996475395,
+      "marginOfError": "0.18746673294763425%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "noise",
       "name": "p5.noise",
-      "opsPerSecond": 3843574.3816996636,
-      "marginOfError": "0.19671806302327066%"
+      "opsPerSecond": 3808327.6715759737,
+      "marginOfError": "0.482801201078203%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "noise",
       "name": "p5.noise 2D",
-      "opsPerSecond": 5565831.493064612,
-      "marginOfError": "0.336971706795776%"
+      "opsPerSecond": 5883892.645654252,
+      "marginOfError": "0.808881817315863%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "noise",
       "name": "p5.noise 2D",
-      "opsPerSecond": 3242100.951094771,
-      "marginOfError": "0.2128675672830589%"
+      "opsPerSecond": 3177112.418847423,
+      "marginOfError": "0.20075082438910322%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "noise",
       "name": "p5.noise 3D",
-      "opsPerSecond": 4496539.181501603,
-      "marginOfError": "0.3309381441353462%"
+      "opsPerSecond": 4421444.044902296,
+      "marginOfError": "0.22245143271000528%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "noise",
       "name": "p5.noise 3D",
-      "opsPerSecond": 2806987.6599519663,
-      "marginOfError": "0.1959828592049882%"
+      "opsPerSecond": 2732186.7990145828,
+      "marginOfError": "0.20372512796567221%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "norm",
       "name": "p5.norm",
-      "opsPerSecond": 82975677.61309458,
-      "marginOfError": "2.4197058084388052%"
+      "opsPerSecond": 687654576.3222535,
+      "marginOfError": "1.6220810297420891%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "norm",
       "name": "p5.norm",
-      "opsPerSecond": 10633387.247622,
-      "marginOfError": "0.24996518125168088%"
+      "opsPerSecond": 10666786.382148184,
+      "marginOfError": "0.23752477061988764%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "pow",
       "name": "p5.pow",
-      "opsPerSecond": 1096365153.2502558,
-      "marginOfError": "0.19099110638302455%"
+      "opsPerSecond": 1190752676.7392616,
+      "marginOfError": "2.255464387035735%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "pow",
       "name": "p5.pow",
-      "opsPerSecond": 710513328.9159962,
-      "marginOfError": "1.9657180823110945%"
+      "opsPerSecond": 707163840.02261,
+      "marginOfError": "1.9348163544362962%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "round",
       "name": "p5.round",
-      "opsPerSecond": 1062262648.5889556,
-      "marginOfError": "4.683735983052643%"
+      "opsPerSecond": 1194082598.0918214,
+      "marginOfError": "2.2323125537194968%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "round",
       "name": "p5.round",
-      "opsPerSecond": 694631061.5296266,
-      "marginOfError": "1.8567222778834356%"
+      "opsPerSecond": 702690129.2104473,
+      "marginOfError": "1.8543395854904954%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "round",
       "name": "p5.round with decimals",
-      "opsPerSecond": 739316579.1575042,
-      "marginOfError": "1.9646701583858517%"
+      "opsPerSecond": 701586589.9352883,
+      "marginOfError": "1.8337938571192087%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "round",
       "name": "p5.round with decimals",
-      "opsPerSecond": 53990931.098191984,
-      "marginOfError": "0.4583676635892391%"
+      "opsPerSecond": 52064923.40425532,
+      "marginOfError": "3.5690675862404806%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "sq",
       "name": "p5.sq",
-      "opsPerSecond": 705564411.669845,
-      "marginOfError": "2.0400308262543634%"
+      "opsPerSecond": 544498723.3599446,
+      "marginOfError": "27.033124642107452%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "sq",
       "name": "p5.sq",
-      "opsPerSecond": 125212365.18344682,
-      "marginOfError": "0.7706212673746536%"
+      "opsPerSecond": 134674587.5728593,
+      "marginOfError": "0.8668939471176468%"
     },
     {
-      "browser": "Firefox 79.0.0 (Linux 0.0.0)",
+      "browser": "Firefox 80.0.0 (Linux 0.0.0)",
       "suite": "sqrt",
       "name": "p5.sqrt",
-      "opsPerSecond": 1093396573.420639,
-      "marginOfError": "0.6652208515153277%"
+      "opsPerSecond": 1193598680.2964456,
+      "marginOfError": "2.2286249227033808%"
     },
     {
-      "browser": "HeadlessChrome 84.0.4147 (Linux 0.0.0)",
+      "browser": "HeadlessChrome 85.0.4183 (Linux 0.0.0)",
       "suite": "sqrt",
       "name": "p5.sqrt",
-      "opsPerSecond": 144851383.20646438,
-      "marginOfError": "31.832411371522262%"
+      "opsPerSecond": 99429023.25691353,
+      "marginOfError": "2.1071863094014676%"
     }
   ],
   "summary": {}
