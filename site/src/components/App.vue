@@ -39,15 +39,5 @@ export default{
 <style lang="less">
 #page-container{
 	padding: 5rem;
-
-	#benchmarks{
-		.benchmark{
-			.result{
-				border: 1px solid black;
-				margin: 1px;
-				padding: 1rem;
-			}
-		}
-	}
 }
 </style>

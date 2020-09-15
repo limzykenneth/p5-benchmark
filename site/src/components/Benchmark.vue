@@ -4,27 +4,25 @@
 		<h2>Date: {{ date.format("MMMM Do YYYY, h:mm:ss a") }}</h2>
 
 		<div class="result"
-			v-for="(result, key) in results"
-			:key="key"
+			v-for="(suite, suiteName) in results"
+			:key="suiteName"
 		>
-			<h3>Suite: {{ key }}</h3>
+			<h3 :id="suiteName">Suite: {{ suiteName }}</h3>
 
-			<div class="data"
-				v-for="(r, k) in result"
-				:key="k"
+			<div
+				v-for="(testCase, testName) in suite"
+				:key="testName"
 			>
-				<h4>Name: {{ k }}</h4>
-				<p class="details"
-					v-for="r2 in r"
-				>
-					{{ r2.browser }}<br>
-					Operations per second: {{ r2.opsPerSecond }}
+				<h4>Name: {{ testName }}</h4>
+				<p v-for="testResult in testCase">
+					{{ testResult.browser }}<br>
+					Operations per second: {{ testResult.opsPerSecond }}
 				</p>
 			</div>
 
 			<benchmark-graph
 				:suiteName="key"
-				:result="result"
+				:suite="suite"
 				:browsers-list="browsersList"
 			></benchmark-graph>
 		</div>
@@ -61,5 +59,13 @@ export default{
 </script>
 
 <style lang="less">
-
+#benchmarks{
+	.benchmark{
+		.result{
+			border: 1px solid black;
+			margin: 1px;
+			padding: 1rem;
+		}
+	}
+}
 </style>

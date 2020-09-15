@@ -14,7 +14,7 @@ export default{
 			type: String,
 			required: true
 		},
-		result: {
+		suite: {
 			type: Object,
 			required: true
 		},
@@ -45,7 +45,7 @@ export default{
 	},
 	computed: {
 		labels: function(){
-			return _.reduce(this.result, (col, r, key) => {
+			return _.reduce(this.suite, (col, r, key) => {
 				col.push(key);
 				return col;
 			}, []);
@@ -55,7 +55,7 @@ export default{
 		},
 		datasets: function(){
 			return _.map(this.browsersList, (browser, i) => {
-				return _.reduce(this.result, (col, r) => {
+				return _.reduce(this.suite, (col, r) => {
 					_.each(r, (r2) => {
 						if(r2.browser === browser){
 							col.label = r2.browser;
