@@ -14,10 +14,14 @@
   "author": "Kenneth Lim <limzy.kenneth@gmail.com> (https://limzykenneth.com)",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "less": "^3.10.3",
+    "@vue/component-compiler-utils": "^3.2.0",
+    "eslint": "^7.9.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "less": "^3.12.2",
     "parcel-bundler": "^1.12.4",
-    "parcel-plugin-static-files-copy": "^2.2.1",
-    "posthtml-favicons": "^1.3.0"
+    "parcel-plugin-static-files-copy": "^2.5.0",
+    "posthtml-favicons": "^1.4.0",
+    "vue-template-compiler": "^2.6.12"
   },
   "staticFiles": {
     "staticPath": [
@@ -27,5 +31,14 @@
       }
     ],
     "watcherGlob": "**"
-  }
+  },
+  "dependencies": {
+    "vue": "^2.6.12",
+    "vue-hot-reload-api": "^2.3.4"
+  },
+  "browserslist": [
+    "last 2 chrome versions",
+    "not dead",
+    "not ie <= 11"
+  ]
 }
