@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/stylesheets/src/stylesheets/style.less"],"names":[],"mappings":"AAAA,EACC,sBAGD,UACC,SAAA,CACA,QAAA,CACA,cAAA,CACA","file":"style.3daefd10.css","sourceRoot":"..","sourcesContent":["*{\n\tbox-sizing: border-box;\n}\n\nhtml, body{\n\tpadding: 0;\n\tmargin: 0;\n\tfont-size: 12px;\n\tfont-family: 'Montserrat', sans-serif;\n}"]}
