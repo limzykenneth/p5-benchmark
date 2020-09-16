@@ -6,7 +6,7 @@ new Vue({
 	el: "#page-content",
 	store,
 	beforeCreate: function(){
-		this.$store.dispatch("fetchBenchmarks", "0.10.2");
+		this.$store.dispatch("fetchBenchmarks", this.$store.state.version);
 	},
 	render: function(createElement){
 		return createElement(App);
