@@ -5,12 +5,7 @@
 		</header>
 
 		<section id="benchmarks">
-			<app-benchmark
-				:version="benchmark.meta.version"
-				:date="benchmark.meta.date"
-				:results="benchmark.results"
-				:browsers-list="browsersList"
-			></app-benchmark>
+			<app-benchmark></app-benchmark>
 		</section>
 	</main>
 </template>
@@ -23,20 +18,11 @@ export default{
 	components: {
 		"app-benchmark": AppBenchmark
 	},
-	props: {
-		benchmark: {
-			type: Object,
-			required: true
-		},
-		browsersList: {
-			type: Array,
-			required: true
-		}
-	}
+	props: {}
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 #page-container{
 	padding: 5rem;
 }

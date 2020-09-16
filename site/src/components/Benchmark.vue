@@ -1,10 +1,10 @@
 <template>
 	<article class="benchmark">
 		<h2>p5.js version: {{ version }}</h2>
-		<h2>Date: {{ date.format("MMMM Do YYYY, h:mm:ss a") }}</h2>
+		<h2>Date: {{ date }}</h2>
 
 		<div class="result"
-			v-for="(suite, suiteName) in results"
+			v-for="(suite, suiteName) in suites"
 			:key="suiteName"
 		>
 			<h3 :id="suiteName">Suite: {{ suiteName }}</h3>
@@ -21,7 +21,7 @@
 			</div>
 
 			<benchmark-graph
-				:suiteName="key"
+				:suiteName="suiteName"
 				:suite="suite"
 				:browsers-list="browsersList"
 			></benchmark-graph>
@@ -37,28 +37,30 @@ export default{
 	components: {
 		"benchmark-graph": BenchmarkGraph
 	},
-	props: {
-		version: {
-			type: String,
-			required: true
+	props: {},
+	computed: {
+		suites: function(){
+			return this.$store.getters.getResultsBySuites;
 		},
-		date: {
-			type: Object,
-			required: true
+		browsersList: function(){
+			return this.$store.getters.getBrowsersList;
 		},
-		results: {
-			type: Object,
-			required: true
+		date: function(){
+			if(!_.isEmpty(this.$store.state.benchmarks)){
+				return moment(this.$store.state.benchmarks.meta.date)
+					.format("MMMM Do YYYY, h:mm:ss a");
+			}else{
+				return "";
+			}
 		},
-		browsersList: {
-			type: Array,
-			required: true
+		version: function(){
+			return this.$store.state.version;
 		}
 	}
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 #benchmarks{
 	.benchmark{
 		.result{

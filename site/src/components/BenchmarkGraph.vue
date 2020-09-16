@@ -1,8 +1,6 @@
 <template>
 	<div class="graph">
-		<canvas class="graph-canvas"
-			:id="suiteName"
-		></canvas>
+		<canvas class="graph-canvas"></canvas>
 	</div>
 </template>
 
