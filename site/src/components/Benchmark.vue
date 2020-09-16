@@ -6,8 +6,9 @@
 		<div class="result"
 			v-for="(suite, suiteName) in suites"
 			:key="suiteName"
+			:id="suiteName"
 		>
-			<h3 :id="suiteName">Suite: {{ suiteName }}</h3>
+			<h3>Suite: {{ suiteName }}</h3>
 
 			<div
 				v-for="(testCase, testName) in suite"
