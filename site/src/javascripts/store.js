@@ -5,7 +5,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 	state: {
 		benchmarks: {},
-		version: "0.10.2"
+		version: "1.1.9"
 	},
 	getters: {
 		getResultsBySuites: function(state){
