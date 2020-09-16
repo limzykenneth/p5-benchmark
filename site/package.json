@@ -1,0 +1,45 @@
+{
+  "name": "static-site-boilerplate",
+  "version": "0.1.0",
+  "description": "Boilerplate for starting a static site project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rm -rf dist/*",
+    "build": "parcel build index.html --public-url ./",
+    "prewatch": "rm -rf dist/*",
+    "watch": "parcel index.html",
+    "prerelease": "npm run build"
+  },
+  "author": "Kenneth Lim <limzy.kenneth@gmail.com> (https://limzykenneth.com)",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.2.0",
+    "eslint": "^7.9.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "less": "^3.12.2",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.5.0",
+    "posthtml-favicons": "^1.4.0",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "../results",
+        "staticOutDir": "assets/results"
+      }
+    ],
+    "watcherGlob": "**"
+  },
+  "dependencies": {
+    "vue": "^2.6.12",
+    "vue-hot-reload-api": "^2.3.4",
+    "vuex": "^3.5.1"
+  },
+  "browserslist": [
+    "last 2 chrome versions",
+    "not dead",
+    "not ie <= 11"
+  ]
+}

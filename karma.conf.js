@@ -1,3 +1,6 @@
+const moment = require("moment");
+const pjson = require("./package.json");
+
 module.exports = function(config) {
 	config.set({
 		// If using busyWork function and karma is giving timeout because of the
@@ -17,7 +20,7 @@ module.exports = function(config) {
 
 		// list of files / patterns to load in the browser
 		files: [
-			"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js",
+			`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
 			"https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.7.2/bluebird.min.js",
 			"wasm/p5.wasm.js",
 			{pattern: "wasm/index.bundle.js", included: false},
@@ -46,7 +49,7 @@ module.exports = function(config) {
 		],
 
 		benchmarkJsonReporter: {
-			pathToJson: "results/benchmark.json",
+			pathToJson: `results/benchmark-${pjson.p5js_version}.json`,
 			formatResults: function(results){
 				return results.map(function(r){
 					return {
@@ -73,8 +76,6 @@ module.exports = function(config) {
 				});
 			},
 			formatOutput: function(results){
-				const date = new Date();
-
 				// Not including summary in final result for now, not very useful
 				// const summary = results.reduce(function(acc, result){
 				// 	if(typeof acc[result.suite] === "undefined"){
@@ -89,12 +90,8 @@ module.exports = function(config) {
 				return {
 					meta: {
 						title: "p5.js Benchmarks",
-						version: "0.10.2",
-						date: [
-							date.toLocaleDateString(),
-							date.toLocaleTimeString(),
-							date.toString().match(/\(([A-Za-z\s].*)\)/)[1]
-						].join(" ")
+						version: pjson.p5js_version,
+						date: moment().toISOString()
 					},
 					results: results,
 					summary: {}

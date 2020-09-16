@@ -11,12 +11,14 @@
     "karma-benchmarkjs-reporter": "^1.0.0",
     "karma-chrome-launcher": "^3.1.0",
     "karma-cli": "^2.0.0",
-    "karma-firefox-launcher": "^1.2.0"
+    "karma-firefox-launcher": "^1.2.0",
+    "moment": "^2.24.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "karma start"
   },
   "author": "Kenneth Lim <limzy.kenneth@gmail.com> (https://designerken.be/)",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "p5js_version": "1.1.9"
 }
