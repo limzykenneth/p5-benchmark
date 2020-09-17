@@ -5,6 +5,7 @@ const pjson = require("./package.json");
 let files = [];
 let proxies = {};
 let mime = {};
+let exportFileSuffix = "";
 
 if(process.env.TEST_CASE === "p5.wasm"){
 	files = [
@@ -20,11 +21,15 @@ if(process.env.TEST_CASE === "p5.wasm"){
 	// mime = {
 	// 	"application/wasm": ["wasm"]
 	// };
+
+	exportFileSuffix = "p5.wasm-0.2.0";
 }else{
 	files = [
 		`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
 		"tests/p5.js/*.js"
 	];
+
+	exportFileSuffix = pjson.p5js_version
 }
 
 module.exports = function(config) {
@@ -60,7 +65,7 @@ module.exports = function(config) {
 		],
 
 		benchmarkJsonReporter: {
-			pathToJson: `results/benchmark-${pjson.p5js_version}.json`,
+			pathToJson: `results/benchmark-${exportFileSuffix}.json`,
 			formatResults: function(results){
 				return results.map(function(r){
 					if(r.suite !== "noop"){
