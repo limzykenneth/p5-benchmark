@@ -21,20 +21,18 @@ module.exports = function(config) {
 		// list of files / patterns to load in the browser
 		files: [
 			`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
-			"https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.7.2/bluebird.min.js",
-			"wasm/p5.wasm.js",
-			{pattern: "wasm/index.bundle.js", included: false},
-			{pattern: "wasm/*.wasm", included: false},
+			"https://cdn.jsdelivr.net/npm/p5.wasm@0.2.0/dist/p5.wasm.js",
 			"tests/*.js"
 		],
 
-		proxies: {
-			"/wasm/": "/base/wasm/"
-		},
+		// Only if testing WASM locally
+		// proxies: {
+		// 	"/wasm/": "/base/wasm/"
+		// },
 
-		mime: {
-			"application/wasm": ["wasm"]
-		},
+		// mime: {
+		// 	"application/wasm": ["wasm"]
+		// },
 
 		// list of files / patterns to exclude
 		exclude: [
@@ -52,13 +50,17 @@ module.exports = function(config) {
 			pathToJson: `results/benchmark-${pjson.p5js_version}.json`,
 			formatResults: function(results){
 				return results.map(function(r){
-					return {
-						browser: r.browser,
-						suite: r.suite,
-						name: r.name,
-						opsPerSecond: r.hz,
-						marginOfError: `${r.rme}%`
-					};
+					if(r.suite !== "noop"){
+						return {
+							browser: r.browser,
+							suite: r.suite,
+							name: r.name,
+							opsPerSecond: r.hz,
+							marginOfError: `${r.rme}%`
+						};
+					}
+				}).filter((r) => {
+					return r !== undefined;
 				}).sort(function(el1, el2){
 					if(el1.suite > el2.suite){
 						return 1;
