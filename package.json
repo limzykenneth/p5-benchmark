@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "benchmark": "^2.1.4",
+    "dotenv": "^8.2.0",
     "karma": "^4.4.1",
     "karma-benchmark": "^1.0.4",
     "karma-benchmark-json-reporter": "^1.0.1",

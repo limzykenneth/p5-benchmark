@@ -1,10 +1,34 @@
+require("dotenv").config();
 const moment = require("moment");
 const pjson = require("./package.json");
 
+let files = [];
+let proxies = {};
+let mime = {};
+
+if(process.env.TEST_CASE === "p5.wasm"){
+	files = [
+		`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
+		"https://cdn.jsdelivr.net/npm/p5.wasm@0.2.0/dist/p5.wasm.js",
+		"tests/p5.wasm/*.js"
+	];
+
+	// Uncomment if testing WASM locally
+	// proxies = {
+	// 	"/wasm/": "/base/wasm/"
+	// };
+	// mime = {
+	// 	"application/wasm": ["wasm"]
+	// };
+}else{
+	files = [
+		`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
+		"tests/p5.js/*.js"
+	];
+}
+
 module.exports = function(config) {
 	config.set({
-		// If using busyWork function and karma is giving timeout because of the
-		// promises is taking too long to resolve, you can increse this.
 		// DO NOT set to 0 or Infinity!
 		browserDisconnectTimeout: 10000,
 
@@ -19,20 +43,9 @@ module.exports = function(config) {
 		],
 
 		// list of files / patterns to load in the browser
-		files: [
-			`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
-			"https://cdn.jsdelivr.net/npm/p5.wasm@0.2.0/dist/p5.wasm.js",
-			"tests/*.js"
-		],
-
-		// Only if testing WASM locally
-		// proxies: {
-		// 	"/wasm/": "/base/wasm/"
-		// },
-
-		// mime: {
-		// 	"application/wasm": ["wasm"]
-		// },
+		files,
+		proxies,
+		mime,
 
 		// list of files / patterns to exclude
 		exclude: [
