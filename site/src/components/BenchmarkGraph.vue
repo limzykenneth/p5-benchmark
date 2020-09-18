@@ -74,7 +74,6 @@ export default{
 		}
 	},
 	mounted: function(){
-		console.log("gere");
 		new Chart(this.ctx, {
 			type: "bar",
 			data: {
