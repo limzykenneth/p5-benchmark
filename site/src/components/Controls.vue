@@ -2,6 +2,7 @@
 	<nav id="controls-container">
 		<select
 			v-model="currentVersion"
+			v-on:change="versionSelected"
 		>
 			<option
 				v-for="(version, i) in versions"
@@ -47,6 +48,11 @@ export default{
 			set: function(suite){
 				this.$store.commit("setCurrentSuite", suite);
 			}
+		}
+	},
+	methods: {
+		versionSelected: function(){
+			this.currentSuite = "";
 		}
 	}
 };

@@ -72,9 +72,15 @@ export default{
 		}
 	},
 	watch: {
-		suiteName: function(){
-			this.chart.data.labels = this.labels;
-			this.chart.data.datasets = this.datasets;
+		suiteName: function(val){
+			if(val !== ""){
+				this.chart.data.labels = this.labels;
+				this.chart.data.datasets = this.datasets;
+			}else{
+				this.chart.data.labels = [];
+				this.chart.data.datasets = [];
+			}
+
 			this.chart.update();
 		}
 	},
