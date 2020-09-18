@@ -1,7 +1,8 @@
 language: node_js
+os: linux
+dist: xenial
 node_js:
   - "12"
-dist: xenial
 services:
   - xvfb
 addons:
@@ -10,13 +11,26 @@ addons:
 branches:
   only:
     - master
+env:
+  - TEST_CASE="p5.js"
+  - TEST_CASE="p5.wasm"
 before_deploy: cd site && npm install && npm run build
 deploy:
-  provider: pages
-  edge: true
-  github_token: $GITHUB_TOKEN
-  local_dir: ./dist/
-  keep_history: true
-  on:
-    branch: master
-    # tags: true
+  # - provider: pages
+  #   edge: true
+  #   github_token: $GITHUB_TOKEN
+  #   local_dir: ./dist/
+  #   keep_history: true
+  #   on:
+  #     branch: master
+      # tags: true
+  - provider: s3
+    edge: true
+    endpoint: s3.us-west-002.backblazeb2.com
+    local_dir: ./results
+    glob: "*.json"
+    bucket: p5js-benchmark
+    on:
+      branch: master
+      # tags: true
+
