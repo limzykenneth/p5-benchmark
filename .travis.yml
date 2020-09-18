@@ -8,9 +8,6 @@ services:
 addons:
   firefox: latest
   chrome: stable
-branches:
-  only:
-    - master
 
 jobs:
   include:
