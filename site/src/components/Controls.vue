@@ -1,6 +1,16 @@
 <template>
 	<nav id="controls-container">
 		<select
+			v-model="currentVersion"
+		>
+			<option
+				v-for="(version, i) in versions"
+				:key="i"
+				:value="version"
+			>{{ version }}</option>
+		</select>
+
+		<select
 			v-model="selectedSuite"
 			v-on:change="navigateToSuite"
 		>
@@ -23,6 +33,17 @@ export default{
 	computed: {
 		suites: function(){
 			return this.$store.getters.getResultsBySuites;
+		},
+		versions: function(){
+			return this.$store.state.versions;
+		},
+		currentVersion: {
+			get: function(){
+				return this.$store.state.version;
+			},
+			set: function(version){
+				this.$store.dispatch("fetchBenchmarks", version);
+			}
 		}
 	},
 	methods: {

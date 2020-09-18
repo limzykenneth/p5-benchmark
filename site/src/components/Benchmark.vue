@@ -47,8 +47,8 @@ export default{
 			return this.$store.getters.getBrowsersList;
 		},
 		date: function(){
-			if(!_.isEmpty(this.$store.state.benchmarks)){
-				return moment(this.$store.state.benchmarks.meta.date)
+			if(!_.isEmpty(this.$store.getters.getCurrentBenchmarks)){
+				return moment(this.$store.getters.getCurrentBenchmarks.meta.date)
 					.format("MMMM Do YYYY, h:mm:ss a");
 			}else{
 				return "";

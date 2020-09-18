@@ -4,12 +4,20 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		benchmarks: {},
-		version: "1.1.9"
+		// Could be replaced with something less manual in the future
+		benchmarks: {
+			"1.1.9": {},
+			"p5.wasm-0.2.0": {}
+		},
+		version: "1.1.9",
+		versions: [
+			"1.1.9",
+			"p5.wasm-0.2.0"
+		]
 	},
 	getters: {
 		getResultsBySuites: function(state){
-			return _.reduce(state.benchmarks.results, (col, benchmark) => {
+			return _.reduce(state.benchmarks[state.version].results, (col, benchmark) => {
 				if(!_.isObject(col[benchmark.suite])){
 					col[benchmark.suite] = {};
 				}
@@ -23,12 +31,15 @@ export default new Vuex.Store({
 			}, {});
 		},
 		getBrowsersList: function(state){
-			return _.sortBy(_.uniq(_.map(state.benchmarks.results, (result) => result.browser)));
+			return _.sortBy(_.uniq(_.map(state.benchmarks[state.version].results, (result) => result.browser)));
+		},
+		getCurrentBenchmarks: function(state){
+			return state.benchmarks[state.version];
 		}
 	},
 	mutations: {
-		setBenchmarks: function(state, benchmarks){
-			state.benchmarks = benchmarks;
+		setBenchmarks: function(state, options){
+			state.benchmarks[options.version] = options.benchmarks;
 		},
 		setVersion: function(state, version){
 			state.version = version;
@@ -36,14 +47,21 @@ export default new Vuex.Store({
 	},
 	actions: {
 		fetchBenchmarks: async function(store, version){
-			const path = process.env.NODE_ENV === "production" ?
-				`https://f002.backblazeb2.com/file/p5js-benchmark/benchmark-${version}.json` :
-				`./assets/results/benchmark-${version}.json`;
+			if(_.isEmpty(store.state.benchmarks[version])){
+				const path = process.env.NODE_ENV === "production" ?
+					`https://f002.backblazeb2.com/file/p5js-benchmark/benchmark-${version}.json` :
+					`./assets/results/benchmark-${version}.json`;
 
-			const benchmarks = await fetch(path)
-				.then((res) => res.json());
+				const benchmarks = await fetch(path)
+					.then((res) => res.json());
 
-			store.commit("setBenchmarks", benchmarks);
+				store.commit("setBenchmarks", {
+					version,
+					benchmarks
+				});
+			}
+
+			store.commit("setVersion", version);
 		}
 	}
 });
