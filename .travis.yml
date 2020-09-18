@@ -14,12 +14,12 @@ branches:
 env:
   - TEST_CASE="p5.js"
   - TEST_CASE="p5.wasm"
-before_deploy: cd site && npm install && npm run build
+before_deploy: cd site && npm ci && npm run build && cd ..
 deploy:
   # - provider: pages
   #   edge: true
   #   github_token: $GITHUB_TOKEN
-  #   local_dir: ./dist/
+  #   local_dir: ./site/dist/
   #   keep_history: true
   #   on:
   #     branch: master
@@ -27,7 +27,7 @@ deploy:
   - provider: s3
     edge: true
     endpoint: s3.us-west-002.backblazeb2.com
-    local_dir: ~/travis/results
+    local_dir: ./results
     glob: "*.json"
     bucket: p5js-benchmark
     on:
