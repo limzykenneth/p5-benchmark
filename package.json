@@ -1,6 +1,6 @@
 {
   "name": "p5-benchmark",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Benchmarking various functions in p5.js",
   "private": true,
   "dependencies": {
