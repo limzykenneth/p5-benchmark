@@ -26,13 +26,11 @@ jobs:
           local_dir: ./results
           glob: "*.json"
           bucket: p5js-benchmark
-          on:
-            tags: true
     - script: npm test
       env:
         - TEST_CASE="p5.wasm"
     - stage: deploy
-      if: tag IS present
+      if: (branch = master) AND (tag IS present)
       script: cd site && npm ci && npm run build && cd ..
       deploy:
         - provider: pages
