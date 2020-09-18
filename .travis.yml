@@ -12,11 +12,6 @@ branches:
   only:
     - master
 
-stages:
-  - test
-  - name: deploy
-    if: branch = master
-
 jobs:
   include:
     - stage: test
@@ -38,6 +33,9 @@ jobs:
       env:
         - TEST_CASE="p5.wasm"
     - stage: deploy
+      if:
+        - branch: master
+        - tags: true
       script: cd site && npm ci && npm run build && cd ..
       deploy:
         - provider: pages
