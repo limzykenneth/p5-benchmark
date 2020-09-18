@@ -33,9 +33,7 @@ jobs:
       env:
         - TEST_CASE="p5.wasm"
     - stage: deploy
-      if:
-        - branch: master
-        - tags: true
+      if: (branch = master) AND (tag IS present)
       script: cd site && npm ci && npm run build && cd ..
       deploy:
         - provider: pages
