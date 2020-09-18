@@ -27,7 +27,7 @@ deploy:
   - provider: s3
     edge: true
     endpoint: s3.us-west-002.backblazeb2.com
-    local_dir: ./results
+    local_dir: ~/travis/results
     glob: "*.json"
     bucket: p5js-benchmark
     on:
