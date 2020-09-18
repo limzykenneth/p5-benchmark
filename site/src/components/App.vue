@@ -40,7 +40,8 @@ export default{
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		background: #aaaaff;
+		background: #ed225d;
+		color: white;
 
 		h1{
 			margin: 0;
