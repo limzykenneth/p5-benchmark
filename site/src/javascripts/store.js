@@ -13,7 +13,8 @@ export default new Vuex.Store({
 		versions: [
 			"1.1.9",
 			"p5.wasm-0.2.0"
-		]
+		],
+		currentSuite: ""
 	},
 	getters: {
 		getResultsBySuites: function(state){
@@ -43,6 +44,9 @@ export default new Vuex.Store({
 		},
 		setVersion: function(state, version){
 			state.version = version;
+		},
+		setCurrentSuite: function(state, suite){
+			state.currentSuite = suite;
 		}
 	},
 	actions: {

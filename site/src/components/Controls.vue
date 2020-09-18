@@ -11,9 +11,9 @@
 		</select>
 
 		<select
-			v-model="selectedSuite"
-			v-on:change="navigateToSuite"
+			v-model="currentSuite"
 		>
+			<option disabled value="">Please select a test suite</option>
 			<option
 				v-for="(suite, suiteName) in suites"
 				:value="suiteName"
@@ -25,11 +25,6 @@
 <script>
 export default{
 	name: "AppControls",
-	data: function(){
-		return {
-			selectedSuite: ""
-		}
-	},
 	computed: {
 		suites: function(){
 			return this.$store.getters.getResultsBySuites;
@@ -44,11 +39,14 @@ export default{
 			set: function(version){
 				this.$store.dispatch("fetchBenchmarks", version);
 			}
-		}
-	},
-	methods: {
-		navigateToSuite: function(){
-			window.location.hash = `#${this.selectedSuite}`;
+		},
+		currentSuite: {
+			get: function(){
+				return this.$store.state.currentSuite;
+			},
+			set: function(suite){
+				this.$store.commit("setCurrentSuite", suite);
+			}
 		}
 	}
 };

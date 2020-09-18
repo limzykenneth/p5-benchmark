@@ -4,14 +4,12 @@
 		<h2>Date: {{ date }}</h2>
 
 		<div class="result"
-			v-for="(suite, suiteName) in suites"
-			:key="suiteName"
-			:id="suiteName"
+			:id="currentSuite"
 		>
-			<h3>Suite: {{ suiteName }}</h3>
+			<h3>Suite: {{ currentSuite }}</h3>
 
 			<div
-				v-for="(testCase, testName) in suite"
+				v-for="(testCase, testName) in suites[currentSuite]"
 				:key="testName"
 			>
 				<h4>Name: {{ testName }}</h4>
@@ -21,11 +19,7 @@
 				</p>
 			</div>
 
-			<benchmark-graph
-				:suiteName="suiteName"
-				:suite="suite"
-				:browsers-list="browsersList"
-			></benchmark-graph>
+			<benchmark-graph></benchmark-graph>
 		</div>
 	</article>
 </template>
@@ -56,6 +50,9 @@ export default{
 		},
 		version: function(){
 			return this.$store.state.version;
+		},
+		currentSuite: function(){
+			return this.$store.state.currentSuite;
 		}
 	}
 };

@@ -8,18 +8,6 @@
 export default{
 	name: "BenchmarkGraph",
 	props: {
-		suiteName: {
-			type: String,
-			required: true
-		},
-		suite: {
-			type: Object,
-			required: true
-		},
-		browsersList: {
-			type: Array,
-			required: true
-		}
 	},
 	data: function(){
 		return {
@@ -38,10 +26,20 @@ export default{
 				'rgba(75, 192, 192, 1)',
 				'rgba(153, 102, 255, 1)',
 				'rgba(255, 159, 64, 1)'
-			]
+			],
+			chart: {}
 		};
 	},
 	computed: {
+		suiteName: function(){
+			return this.$store.state.currentSuite;
+		},
+		suite: function(){
+			return this.$store.getters.getResultsBySuites[this.suiteName];
+		},
+		browsersList: function(){
+			return this.$store.getters.getBrowsersList;
+		},
 		labels: function(){
 			return _.reduce(this.suite, (col, r, key) => {
 				col.push(key);
@@ -73,8 +71,15 @@ export default{
 			});
 		}
 	},
+	watch: {
+		suiteName: function(){
+			this.chart.data.labels = this.labels;
+			this.chart.data.datasets = this.datasets;
+			this.chart.update();
+		}
+	},
 	mounted: function(){
-		new Chart(this.ctx, {
+		this.chart = new Chart(this.ctx, {
 			type: "bar",
 			data: {
 				labels: this.labels,
