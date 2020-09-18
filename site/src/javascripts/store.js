@@ -36,8 +36,13 @@ export default new Vuex.Store({
 	},
 	actions: {
 		fetchBenchmarks: async function(store, version){
-			const benchmarks = await fetch(`./assets/results/benchmark-${version}.json`)
+			const path = process.env.NODE_ENV === "production" ?
+				`https://f002.backblazeb2.com/file/p5js-benchmark/benchmark-${version}.json` :
+				`./assets/results/benchmark-${version}.json`;
+
+			const benchmarks = await fetch(path)
 				.then((res) => res.json());
+
 			store.commit("setBenchmarks", benchmarks);
 		}
 	}

@@ -20,10 +20,9 @@ stages:
 jobs:
   include:
     - stage: test
-      env:
-      - TEST_CASE="p5.js"
-      - TEST_CASE="p5.wasm"
       script: npm test
+      env:
+        - TEST_CASE="p5.js"
       deploy:
         - provider: s3
           edge: true
@@ -35,6 +34,9 @@ jobs:
           on:
             branch: master
             tags: true
+    - script: npm test
+      env:
+        - TEST_CASE="p5.wasm"
     - stage: deploy
       script: cd site && npm ci && npm run build && cd ..
       deploy:
