@@ -27,6 +27,7 @@ deploy:
   - provider: s3
     edge: true
     endpoint: s3.us-west-002.backblazeb2.com
+    acl: public_read
     local_dir: ./results
     glob: "*.json"
     bucket: p5js-benchmark
