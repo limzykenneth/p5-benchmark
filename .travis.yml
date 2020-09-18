@@ -27,7 +27,7 @@ jobs:
           glob: "*.json"
           bucket: p5js-benchmark
           on:
-            condition: -v variable
+            tags: true
     - script: npm test
       env:
         - TEST_CASE="p5.wasm"
@@ -40,5 +40,5 @@ jobs:
           token: $GITHUB_TOKEN
           local_dir: ./site/dist/
           on:
-            condition: -v variable
+            tags: true
 
