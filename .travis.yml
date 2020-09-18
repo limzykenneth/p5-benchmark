@@ -39,7 +39,7 @@ jobs:
           on:
             tags: true
     - stage: deploy
-      if: (branch = master) AND (tag IS present)
+      if: tag IS present
       script: cd site && npm ci && npm run build && cd ..
       deploy:
         - provider: pages
