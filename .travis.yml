@@ -11,27 +11,38 @@ addons:
 branches:
   only:
     - master
-env:
-  - TEST_CASE="p5.js"
-  - TEST_CASE="p5.wasm"
-before_deploy: cd site && npm ci && npm run build && cd ..
-deploy:
-  # - provider: pages
-  #   edge: true
-  #   github_token: $GITHUB_TOKEN
-  #   local_dir: ./site/dist/
-  #   keep_history: true
-  #   on:
-  #     branch: master
-      # tags: true
-  - provider: s3
-    edge: true
-    endpoint: s3.us-west-002.backblazeb2.com
-    acl: public_read
-    local_dir: ./results
-    glob: "*.json"
-    bucket: p5js-benchmark
-    on:
-      branch: master
-      # tags: true
+
+stages:
+  - test
+  - name: deploy
+    if: branch = master
+
+jobs:
+  include:
+    - stage: test
+      env:
+      - TEST_CASE="p5.js"
+      - TEST_CASE="p5.wasm"
+      script: npm test
+      deploy:
+        - provider: s3
+          edge: true
+          endpoint: s3.us-west-002.backblazeb2.com
+          acl: public_read
+          local_dir: ./results
+          glob: "*.json"
+          bucket: p5js-benchmark
+          on:
+            branch: master
+            tags: true
+    - stage: deploy
+      script: cd site && npm ci && npm run build && cd ..
+      deploy:
+        - provider: pages
+          edge: true
+          token: $GITHUB_TOKEN
+          local_dir: ./site/dist/
+          on:
+            branch: master
+            tags: true
 
