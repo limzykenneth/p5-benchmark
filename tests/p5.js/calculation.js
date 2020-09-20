@@ -1,4 +1,4 @@
-/* global abs, ceil, constrain, dist, exp, floor, lerp, log, mag, map, max, min, norm, pow, round, sq, sqrt */
+/* global abs, ceil, constrain, dist, exp, floor, lerp, log, mag, map, max, min, norm, pow, round, sq, sqrt, fract */
 
 suite("abs", () => {
 	benchmark("p5.abs", () => {
@@ -122,9 +122,8 @@ suite("sqrt", () => {
 	});
 });
 
-// Not released yet
-// suite("fract", () => {
-// 	benchmark("p5.fract", () => {
-// 		fract(1.2);
-// 	});
-// });
+suite("fract", () => {
+	benchmark("p5.fract", () => {
+		fract(1.2);
+	});
+});
