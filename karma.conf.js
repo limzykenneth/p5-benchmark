@@ -23,6 +23,12 @@ if(process.env.TEST_CASE === "p5.wasm"){
 	// };
 
 	exportFileSuffix = "p5.wasm-0.2.0";
+
+}else if(process.env.TEST_CASE === "q5.js"){
+	files = [
+		"https://cdn.jsdelivr.net/gh/LingDong-/q5xjs/q5.min.js",
+		"tests/q5.js/*.js"
+	];
 }else{
 	files = [
 		`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
