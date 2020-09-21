@@ -5,43 +5,67 @@
 
 	suite("filter", function(){
 		benchmark("q5.filter(THRESHOLD)", function(){
-			image(window.img, 0, 0);
 			filter(THRESHOLD);
+		}, {
+			onCycle(){
+				image(window.img, 0, 0);
+			}
 		});
 
 		benchmark("q5.filter(GRAY)", function(){
-			image(window.img, 0, 0);
 			filter(GRAY);
+		}, {
+			onCycle(){
+				image(window.img, 0, 0);
+			}
 		});
 
 		benchmark("q5.filter(OPAQUE)", function(){
-			image(window.img, 0, 0);
 			filter(OPAQUE);
+		}, {
+			onCycle(){
+				image(window.img, 0, 0);
+			}
 		});
 
 		benchmark("q5.filter(INVERT)", function(){
-			image(window.img, 0, 0);
 			filter(INVERT);
+		}, {
+			onCycle(){
+				image(window.img, 0, 0);
+			}
 		});
 
 		benchmark("q5.filter(POSTERIZE)", function(){
-			image(window.img, 0, 0);
 			filter(POSTERIZE, 3);
+		}, {
+			onCycle(){
+				image(window.img, 0, 0);
+			}
 		});
 
 		benchmark("q5.filter(BLUR)", function(){
-			image(window.img, 0, 0);
 			filter(BLUR, 10);
+		}, {
+			onCycle(){
+				image(window.img, 0, 0);
+			}
 		});
 
 		benchmark("q5.filter(ERODE)", function(){
-			image(window.img, 0, 0);
 			filter(ERODE);
+		}, {
+			onCycle(){
+				image(window.img, 0, 0);
+			}
 		});
 
 		benchmark("q5.filter(DILATE)", function(){
-			image(window.img, 0, 0);
 			filter(DILATE);
+		}, {
+			onCycle(){
+				image(window.img, 0, 0);
+			}
 		});
 	});
 })();
