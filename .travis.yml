@@ -38,6 +38,19 @@ jobs:
           bucket: p5js-benchmark
           on:
             tags: true
+    - script: npm test
+      env:
+        - TEST_CASE="q5.js"
+      deploy:
+        - provider: s3
+          edge: true
+          endpoint: s3.us-west-002.backblazeb2.com
+          acl: public_read
+          local_dir: ./results
+          glob: "*.json"
+          bucket: p5js-benchmark
+          on:
+            tags: true
     - stage: deploy
       if: tag IS present
       script: cd site && npm ci && npm run build && cd ..
