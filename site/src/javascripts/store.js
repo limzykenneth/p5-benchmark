@@ -7,12 +7,14 @@ export default new Vuex.Store({
 		// Could be replaced with something less manual in the future
 		benchmarks: {
 			"1.1.9": {},
-			"p5.wasm-0.2.0": {}
+			"p5.wasm-0.2.0": {},
+			"p5.wasm-0.2.1": {}
 		},
 		version: "1.1.9",
 		versions: [
 			"1.1.9",
-			"p5.wasm-0.2.0"
+			"p5.wasm-0.2.0",
+			"p5.wasm-0.2.1"
 		],
 		currentSuite: ""
 	},

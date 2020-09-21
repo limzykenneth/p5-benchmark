@@ -10,7 +10,7 @@ let exportFileSuffix = "";
 if(process.env.TEST_CASE === "p5.wasm"){
 	files = [
 		`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
-		"https://cdn.jsdelivr.net/npm/p5.wasm@0.2.0/dist/p5.wasm.js",
+		"https://cdn.jsdelivr.net/npm/p5.wasm@0.2.1/dist/p5.wasm.js",
 		"tests/p5.wasm/*.js"
 	];
 
@@ -22,7 +22,7 @@ if(process.env.TEST_CASE === "p5.wasm"){
 	// 	"application/wasm": ["wasm"]
 	// };
 
-	exportFileSuffix = "p5.wasm-0.2.0";
+	exportFileSuffix = "p5.wasm-0.2.1";
 
 }else if(process.env.TEST_CASE === "q5.js"){
 	files = [
