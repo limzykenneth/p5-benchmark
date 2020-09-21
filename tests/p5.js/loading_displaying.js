@@ -1,5 +1,12 @@
-suite("loading & displaying", function(){
-	benchmark("p5.tint", function(){
-		tint(0, 153, 204);
+/* global tint, image */
+
+(async function(){
+	await window._ready;
+
+	suite("tint", function(){
+		benchmark("p5.tint", function(){
+			tint(0, 153, 204);
+			image(window.img, 0, 0);
+		});
 	});
-});
+})();

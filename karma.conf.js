@@ -32,8 +32,17 @@ if(process.env.TEST_CASE === "p5.wasm"){
 }else{
 	files = [
 		`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
-		"tests/p5.js/*.js"
+		"tests/p5.js/*.js",
+		{
+			pattern: "tests/painting.png",
+			included: false,
+			served: true
+		}
 	];
+
+	proxies = {
+		"/": "/base/tests/"
+	};
 
 	exportFileSuffix = pjson.p5js_version
 }

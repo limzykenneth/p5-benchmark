@@ -1,3 +1,14 @@
-new p5();
+/* global createCanvas, loadImage, pixelDensity */
 
-createCanvas(1024, 1024);
+function setup(){
+	createCanvas(100, 100);
+	pixelDensity(1);
+
+	window._ready = new Promise((resolve, reject) => {
+		window.img = loadImage("/painting.png", function(){
+			resolve();
+		}, function(err){
+			reject(err);
+		});
+	});
+}
