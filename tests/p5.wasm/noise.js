@@ -16,4 +16,10 @@
 			wasm.noise3d(1.2, 2.2, 3.2);
 		});
 	});
+
+	suite("noiseSeed", () => {
+		benchmark("p5.wasm.noise_seed", () => {
+			wasm.noise_seed(12);
+		});
+	});
 })();
