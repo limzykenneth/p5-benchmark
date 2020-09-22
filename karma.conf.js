@@ -11,6 +11,7 @@ if(process.env.TEST_CASE === "p5.wasm"){
 	files = [
 		`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
 		"https://cdn.jsdelivr.net/npm/p5.wasm@0.2.1/dist/p5.wasm.js",
+		"tests/p5.wasm/test_setup.js",
 		"tests/p5.wasm/*.js"
 	];
 
