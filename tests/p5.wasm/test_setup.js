@@ -1,8 +1,8 @@
-suite("noop", function(){
-	benchmark("noop", function(){
+suite("noop", () => {
+	benchmark("noop", () => {
 	});
 }, {
-	onComplete: function(){
+	onComplete: () => {
 		new p5();
 	}
 });

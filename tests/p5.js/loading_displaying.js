@@ -1,10 +1,10 @@
 /* global tint, image */
 
-(async function(){
+(async () => {
 	await window._ready;
 
-	suite("tint", function(){
-		benchmark("p5.tint", function(){
+	suite("tint", () => {
+		benchmark("p5.tint", () => {
 			tint(0, 153, 204);
 			image(window.img, 0, 0);
 		});

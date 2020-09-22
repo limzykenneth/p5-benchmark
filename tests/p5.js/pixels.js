@@ -1,10 +1,10 @@
 /* global filter, image, THRESHOLD, GRAY, OPAQUE, INVERT, POSTERIZE, BLUR, ERODE, DILATE */
 
-(async function(){
+(async () => {
 	await window._ready;
 
-	suite("filter", function(){
-		benchmark("p5.filter(THRESHOLD)", function(){
+	suite("filter", () => {
+		benchmark("p5.filter(THRESHOLD)", () => {
 			filter(THRESHOLD);
 		}, {
 			onCycle(){
@@ -12,7 +12,7 @@
 			}
 		});
 
-		benchmark("p5.filter(GRAY)", function(){
+		benchmark("p5.filter(GRAY)", () => {
 			filter(GRAY);
 		}, {
 			onCycle(){
@@ -20,7 +20,7 @@
 			}
 		});
 
-		benchmark("p5.filter(OPAQUE)", function(){
+		benchmark("p5.filter(OPAQUE)", () => {
 			filter(OPAQUE);
 		}, {
 			onCycle(){
@@ -28,7 +28,7 @@
 			}
 		});
 
-		benchmark("p5.filter(INVERT)", function(){
+		benchmark("p5.filter(INVERT)", () => {
 			filter(INVERT);
 		}, {
 			onCycle(){
@@ -36,7 +36,7 @@
 			}
 		});
 
-		benchmark("p5.filter(POSTERIZE)", function(){
+		benchmark("p5.filter(POSTERIZE)", () => {
 			filter(POSTERIZE, 3);
 		}, {
 			onCycle(){
@@ -44,7 +44,7 @@
 			}
 		});
 
-		benchmark("p5.filter(BLUR)", function(){
+		benchmark("p5.filter(BLUR)", () => {
 			filter(BLUR, 10);
 		}, {
 			onCycle(){
@@ -52,7 +52,7 @@
 			}
 		});
 
-		benchmark("p5.filter(ERODE)", function(){
+		benchmark("p5.filter(ERODE)", () => {
 			filter(ERODE);
 		}, {
 			onCycle(){
@@ -60,7 +60,7 @@
 			}
 		});
 
-		benchmark("p5.filter(DILATE)", function(){
+		benchmark("p5.filter(DILATE)", () => {
 			filter(DILATE);
 		}, {
 			onCycle(){
