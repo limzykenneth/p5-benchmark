@@ -27,11 +27,25 @@ if(process.env.TEST_CASE === "p5.wasm"){
 }else if(process.env.TEST_CASE === "q5.js"){
 	files = [
 		"https://cdn.jsdelivr.net/gh/LingDong-/q5xjs/q5.min.js",
-		"tests/q5.js/*.js"
+		"tests/q5.js/test_setup.js",
+		"tests/q5.js/*.js",
+		{
+			pattern: "tests/painting.png",
+			included: false,
+			served: true
+		}
 	];
+
+	proxies = {
+		"/": "/base/tests/"
+	};
+
+
+	exportFileSuffix = "q5.js-0.2.0";
 }else{
 	files = [
 		`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
+		"tests/p5.js/test_setup.js",
 		"tests/p5.js/*.js",
 		{
 			pattern: "tests/painting.png",

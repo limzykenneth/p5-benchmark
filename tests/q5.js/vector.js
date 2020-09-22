@@ -3,7 +3,7 @@
 suite("Vector.rotate", () => {
 	let v;
 
-	benchmark("p5.Vector.rotate", () => {
+	benchmark("q5.Vector.rotate", () => {
 		v.rotate(2.0);
 	}, {
 		setup(){
