@@ -12,7 +12,7 @@ if(process.env.TEST_CASE === "p5.wasm"){
 		`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
 		"https://cdn.jsdelivr.net/npm/p5.wasm@0.2.1/dist/p5.wasm.js",
 		"tests/p5.wasm/test_setup.js",
-		"tests/p5.wasm/*.js"
+		`tests/p5.wasm/${process.env.TEST_MODULE || "*"}.js`
 	];
 
 	// Uncomment if testing WASM locally
@@ -29,7 +29,7 @@ if(process.env.TEST_CASE === "p5.wasm"){
 	files = [
 		"https://cdn.jsdelivr.net/gh/LingDong-/q5xjs/q5.min.js",
 		"tests/q5.js/test_setup.js",
-		"tests/q5.js/*.js",
+		`tests/q5.js/${process.env.TEST_MODULE || "*"}.js`,
 		{
 			pattern: "tests/painting.png",
 			included: false,
@@ -47,7 +47,7 @@ if(process.env.TEST_CASE === "p5.wasm"){
 	files = [
 		`https://cdnjs.cloudflare.com/ajax/libs/p5.js/${pjson.p5js_version}/p5.min.js`,
 		"tests/p5.js/test_setup.js",
-		"tests/p5.js/*.js",
+		`tests/p5.js/${process.env.TEST_MODULE || "*"}.js`,
 		{
 			pattern: "tests/painting.png",
 			included: false,
