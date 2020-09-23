@@ -4,37 +4,36 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		// Could be replaced with something less manual in the future
-		benchmarks: {
-			"1.1.9": {},
-			"p5.wasm-0.2.0": {},
-			"p5.wasm-0.2.1": {}
-		},
-		version: "1.1.9",
-		versions: [
-			"1.1.9",
-			"p5.wasm-0.2.0",
-			"p5.wasm-0.2.1"
-		],
+		benchmarks: {},
+		version: "",
+		versions: [],
 		currentSuite: ""
 	},
 	getters: {
 		getResultsBySuites: function(state){
-			return _.reduce(state.benchmarks[state.version].results, (col, benchmark) => {
-				if(!_.isObject(col[benchmark.suite])){
-					col[benchmark.suite] = {};
-				}
-				if(!_.isArray(col[benchmark.suite][benchmark.name])){
-					col[benchmark.suite][benchmark.name] = [];
-				}
-				col[benchmark.suite][benchmark.name].push(benchmark);
-				col[benchmark.suite][benchmark.name] = _.sortBy(col[benchmark.suite][benchmark.name], "browser");
+			if(state.version){
+				return _.reduce(state.benchmarks[state.version].results, (col, benchmark) => {
+					if(!_.isObject(col[benchmark.suite])){
+						col[benchmark.suite] = {};
+					}
+					if(!_.isArray(col[benchmark.suite][benchmark.name])){
+						col[benchmark.suite][benchmark.name] = [];
+					}
+					col[benchmark.suite][benchmark.name].push(benchmark);
+					col[benchmark.suite][benchmark.name] = _.sortBy(col[benchmark.suite][benchmark.name], "browser");
 
-				return col;
-			}, {});
+					return col;
+				}, {});
+			}else{
+				return {};
+			}
 		},
 		getBrowsersList: function(state){
-			return _.sortBy(_.uniq(_.map(state.benchmarks[state.version].results, (result) => result.browser)));
+			if(state.version){
+				return _.sortBy(_.uniq(_.map(state.benchmarks[state.version].results, (result) => result.browser)));
+			}else{
+				return [];
+			}
 		},
 		getCurrentBenchmarks: function(state){
 			return state.benchmarks[state.version];
@@ -42,10 +41,13 @@ export default new Vuex.Store({
 	},
 	mutations: {
 		setBenchmarks: function(state, options){
-			state.benchmarks[options.version] = options.benchmarks;
+			Vue.set(state.benchmarks, options.version, options.benchmarks);
 		},
 		setVersion: function(state, version){
 			state.version = version;
+		},
+		setVersions: function(state, versions){
+			state.versions = versions;
 		},
 		setCurrentSuite: function(state, suite){
 			state.currentSuite = suite;
@@ -68,6 +70,36 @@ export default new Vuex.Store({
 			}
 
 			store.commit("setVersion", version);
+			const suite = _.keys(store.getters.getResultsBySuites)[0]
+			store.commit("setCurrentSuite", suite);
+		},
+		fetchVersions: async function(store){
+			let versions = [];
+			if(process.env.NODE_ENV === "production"){
+				const path = "https://p5js-benchmark.limzykenneth.workers.dev/";
+				const data = await fetch(path)
+					.then((res) => res.json());
+
+				const versionRegex = /benchmark-(.+?)\.json/;
+				versions = _.map(data.files, (file) => {
+					const fileName = file.fileName;
+
+					return versionRegex.exec(fileName)[1];
+				});
+			}else{
+				versions = require("./versions.local.json");
+			}
+
+			store.commit("setVersions", versions);
+			versions.forEach((version) => {
+				if(!store.state.benchmarks[version]){
+					store.commit("setBenchmarks", {
+						version,
+						benchmarks: {}
+					});
+				}
+			});
+			store.commit("setVersion", versions[0]);
 		}
 	}
 });

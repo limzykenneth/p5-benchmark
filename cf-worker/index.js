@@ -25,14 +25,21 @@ async function handleRequest() {
 
 	let result;
 
-	result = await fetch(fetchRequest);
+	result = fetch(fetchRequest);
 
 	if(result.status === 401){
 		await fetchAuthToken
-		result = await fetch(fetchRequest);
+		result = fetch(fetchRequest);
 	}
 
-	return result;
+	const data = await result.then((res) => res.json());
+
+	return new Response(JSON.stringify(data), {
+		headers: {
+			"Content-Type": "application/json",
+			"Access-Control-Allow-Origin": "*"
+		}
+	});
 }
 
 async function fetchAuthToken(){

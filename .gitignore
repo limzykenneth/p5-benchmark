@@ -132,3 +132,4 @@ Temporary Items
 
 results/
 site/dist/
+*.local.json
