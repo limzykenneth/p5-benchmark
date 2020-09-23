@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "p5js-benchmark-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare worker that communicates with Backblaze B2 API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "limzykenneth <limzy.kenneth@gmail.com>",
+  "license": "BSD-2-Clause",
+  "devDependencies": {}
+}
