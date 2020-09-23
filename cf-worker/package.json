@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "p5js-benchmark-worker",
+  "name": "p5js-benchmark-cf-worker",
   "version": "1.0.0",
   "description": "Cloudflare worker that communicates with Backblaze B2 API",
   "main": "index.js",
