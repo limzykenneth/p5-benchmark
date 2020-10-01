@@ -35,6 +35,7 @@ export default{
 			return this.$store.state.currentSuite;
 		},
 		suite: function(){
+			// console.log(this.$store.getters.getResultsBySuites);
 			return this.$store.getters.getResultsBySuites[this.suiteName];
 		},
 		ctx: function(){

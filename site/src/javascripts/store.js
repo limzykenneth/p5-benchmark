@@ -14,7 +14,7 @@ export default new Vuex.Store({
 			if(state.version){
 				let initial = {};
 				_.each(getters.getCurrentBenchmarks.results, (benchmark) => {
-					initial[benchmark.suite] = {};
+					initial[benchmark.suite] = initial[benchmark.suite] || {};
 					initial[benchmark.suite][benchmark.name] = [];
 				});
 
@@ -74,8 +74,7 @@ export default new Vuex.Store({
 			}
 
 			store.commit("setVersion", version);
-			const suite = _.keys(store.getters.getResultsBySuites)[0]
-			store.commit("setCurrentSuite", suite);
+			store.commit("setCurrentSuite", _.keys(store.getters.getResultsBySuites)[0]);
 		},
 		fetchVersions: async function(store){
 			let versions = [];
