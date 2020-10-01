@@ -37,37 +37,34 @@ export default{
 		suite: function(){
 			return this.$store.getters.getResultsBySuites[this.suiteName];
 		},
-		browsersList: function(){
-			return this.$store.getters.getBrowsersList;
-		},
-		labels: function(){
-			return _.reduce(this.suite, (col, r, key) => {
-				col.push(key);
-				return col;
-			}, []);
-		},
 		ctx: function(){
 			return this.$el.querySelector(".graph-canvas").getContext("2d");
 		},
 		datasets: function(){
-			return _.map(this.browsersList, (browser, i) => {
-				return _.reduce(this.suite, (col, r) => {
-					_.each(r, (r2) => {
-						if(r2.browser === browser){
-							col.label = r2.browser;
-							if(!Array.isArray(col.data)){
-								col.data = [];
-							}
-							col.data.push(r2.opsPerSecond);
+			return this.$store.getters.getBrowsersList.map((browser, i) => {
+				return _.reduce(this.suite, (col, benchmark) => {
+					benchmark.forEach((data) => {
+						if(data.browser === browser){
+							col.data.push(data.opsPerSecond);
 						}
 					});
 
 					col.backgroundColor = this.backgroundColors[i];
 					col.borderColor = this.borderColors[i];
-					col.borderWidth = 1;
 
 					return col;
-				}, {});
+				}, {
+					backgroundColor: this.backgroundColors[0],
+					borderColor: this.borderColors[0],
+					borderWidth: 1,
+					label: browser,
+					data: []
+				});
+			});
+		},
+		labels: function(){
+			return _.map(this.suite, (benchmark, key) => {
+				return key;
 			});
 		}
 	},

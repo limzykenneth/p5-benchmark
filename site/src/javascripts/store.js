@@ -10,27 +10,31 @@ export default new Vuex.Store({
 		currentSuite: ""
 	},
 	getters: {
-		getResultsBySuites: function(state){
+		getResultsBySuites: function(state, getters){
 			if(state.version){
-				return _.reduce(state.benchmarks[state.version].results, (col, benchmark) => {
-					if(!_.isObject(col[benchmark.suite])){
-						col[benchmark.suite] = {};
-					}
-					if(!_.isArray(col[benchmark.suite][benchmark.name])){
-						col[benchmark.suite][benchmark.name] = [];
-					}
+				let initial = {};
+				_.each(getters.getCurrentBenchmarks.results, (benchmark) => {
+					initial[benchmark.suite] = {};
+					initial[benchmark.suite][benchmark.name] = [];
+				});
+
+				return _.reduce(getters.getCurrentBenchmarks.results, (col, benchmark) => {
 					col[benchmark.suite][benchmark.name].push(benchmark);
 					col[benchmark.suite][benchmark.name] = _.sortBy(col[benchmark.suite][benchmark.name], "browser");
 
 					return col;
-				}, {});
+				}, initial);
 			}else{
 				return {};
 			}
 		},
-		getBrowsersList: function(state){
+		getBrowsersList: function(state, getters){
 			if(state.version){
-				return _.sortBy(_.uniq(_.map(state.benchmarks[state.version].results, (result) => result.browser)));
+				return _.chain(getters.getCurrentBenchmarks.results)
+					.map((result) => result.browser)
+					.uniq()
+					.sortBy()
+					.value();
 			}else{
 				return [];
 			}
