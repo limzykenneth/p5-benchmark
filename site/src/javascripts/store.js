@@ -11,36 +11,28 @@ export default new Vuex.Store({
 	},
 	getters: {
 		getResultsBySuites: function(state, getters){
-			if(state.version){
-				let initial = {};
-				_.each(getters.getCurrentBenchmarks.results, (benchmark) => {
-					initial[benchmark.suite] = initial[benchmark.suite] || {};
-					initial[benchmark.suite][benchmark.name] = [];
-				});
+			let initial = {};
+			_.each(getters.getCurrentBenchmarks.results, (benchmark) => {
+				initial[benchmark.suite] = initial[benchmark.suite] || {};
+				initial[benchmark.suite][benchmark.name] = [];
+			});
 
-				return _.reduce(getters.getCurrentBenchmarks.results, (col, benchmark) => {
-					col[benchmark.suite][benchmark.name].push(benchmark);
-					col[benchmark.suite][benchmark.name] = _.sortBy(col[benchmark.suite][benchmark.name], "browser");
+			return _.reduce(getters.getCurrentBenchmarks.results, (col, benchmark) => {
+				col[benchmark.suite][benchmark.name].push(benchmark);
+				col[benchmark.suite][benchmark.name] = _.sortBy(col[benchmark.suite][benchmark.name], "browser");
 
-					return col;
-				}, initial);
-			}else{
-				return {};
-			}
+				return col;
+			}, initial);
 		},
 		getBrowsersList: function(state, getters){
-			if(state.version){
-				return _.chain(getters.getCurrentBenchmarks.results)
-					.map((result) => result.browser)
-					.uniq()
-					.sortBy()
-					.value();
-			}else{
-				return [];
-			}
+			return _.chain(getters.getCurrentBenchmarks.results)
+				.map((result) => result.browser)
+				.uniq()
+				.sortBy()
+				.value();
 		},
 		getCurrentBenchmarks: function(state){
-			return state.benchmarks[state.version];
+			return state.benchmarks[state.version] || {};
 		}
 	},
 	mutations: {
@@ -74,6 +66,7 @@ export default new Vuex.Store({
 			}
 
 			store.commit("setVersion", version);
+			// console.log(_.keys(store.getters.getResultsBySuites)[0]);
 			store.commit("setCurrentSuite", _.keys(store.getters.getResultsBySuites)[0]);
 		},
 		fetchVersions: async function(store){

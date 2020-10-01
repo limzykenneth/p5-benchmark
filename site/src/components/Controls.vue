@@ -46,7 +46,9 @@ export default{
 				return this.$store.state.currentSuite;
 			},
 			set: function(suite){
-				this.$store.commit("setCurrentSuite", suite);
+				if(suite){
+					this.$store.commit("setCurrentSuite", suite);
+				}
 			}
 		}
 	},
