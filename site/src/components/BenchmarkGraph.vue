@@ -99,9 +99,19 @@ export default{
 				tooltips: {
 					callbacks: {
 						title: (tooltipItem) => {
-							let title = tooltipItem[0].xLabel[0];
+							const title = tooltipItem[0].xLabel[0];
 
 							return `${title}\nVersion: ${this.$store.state.version}`;
+						},
+						label: (tooltipItem, data) => {
+							let label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+							if (label) {
+								label += ': ';
+							}
+
+							label += `${Math.round(tooltipItem.yLabel).toLocaleString()} ops/sec`;
+							return label;
 						}
 					}
 				}

@@ -15,7 +15,7 @@
 				<h4>Name: {{ testName }}</h4>
 				<p v-for="testResult in testCase">
 					{{ testResult.browser }}<br>
-					Operations per second: {{ testResult.opsPerSecond }}
+					Operations per second: {{ testResult.opsPerSecond | round | formatNumber }}
 				</p>
 			</div>
 
@@ -31,6 +31,14 @@ export default{
 	name: "AppBenchmark",
 	components: {
 		"benchmark-graph": BenchmarkGraph
+	},
+	filters: {
+		round: function(value){
+			return Math.round(value);
+		},
+		formatNumber: function(value){
+			return value.toLocaleString();
+		}
 	},
 	props: {},
 	computed: {
