@@ -66,7 +66,6 @@ export default new Vuex.Store({
 			}
 
 			store.commit("setVersion", version);
-			// console.log(_.keys(store.getters.getResultsBySuites)[0]);
 			store.commit("setCurrentSuite", _.keys(store.getters.getResultsBySuites)[0]);
 		},
 		fetchVersions: async function(store){

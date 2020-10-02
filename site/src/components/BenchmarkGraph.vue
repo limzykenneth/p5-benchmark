@@ -35,7 +35,6 @@ export default{
 			return this.$store.state.currentSuite;
 		},
 		suite: function(){
-			// console.log(this.$store.getters.getResultsBySuites);
 			return this.$store.getters.getResultsBySuites[this.suiteName];
 		},
 		ctx: function(){
@@ -65,7 +64,7 @@ export default{
 		},
 		labels: function(){
 			return _.map(this.suite, (benchmark, key) => {
-				return key;
+				return [key, `Version: ${this.$store.state.version}`];
 			});
 		}
 	},
@@ -96,6 +95,15 @@ export default{
 							beginAtZero: true
 						}
 					}]
+				},
+				tooltips: {
+					callbacks: {
+						title: (tooltipItem) => {
+							let title = tooltipItem[0].xLabel[0];
+
+							return `${title}\nVersion: ${this.$store.state.version}`;
+						}
+					}
 				}
 			}
 		});
