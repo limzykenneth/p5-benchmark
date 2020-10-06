@@ -12,7 +12,6 @@
 			v-if="searchFilter(benchmarkName)"
 
 			:benchmark-name="benchmarkName"
-			:benchmarkID="benchmarkID(benchmarkName)"
 			:suite-name="suiteName"
 			:version="version"
 		></selection-list-item>
@@ -45,11 +44,6 @@ export default{
 			default: ""
 		}
 	},
-	computed: {
-		suiteID: function(){
-			return `${this.version} ${this.suiteName}`;
-		}
-	},
 	methods: {
 		selectGroup: function(){
 			const group = _.chain(this.suite)
@@ -64,9 +58,6 @@ export default{
 				suiteName: this.suiteName,
 				benchmarkNames: group
 			});
-		},
-		benchmarkID: function(benchmarkName){
-			return `${this.suiteID} ${benchmarkName}`
 		},
 		searchFilter: function(benchmarkName){
 			if(benchmarkName){
