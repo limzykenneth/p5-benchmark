@@ -8,7 +8,7 @@ export default new Vuex.Store({
 		version: "",
 		versions: [],
 		currentSuite: "",
-		selectedBenchmarks: []
+		selectedBenchmarks: {}
 	},
 	getters: {
 		getResultsBySuites: function(state){
@@ -71,20 +71,36 @@ export default new Vuex.Store({
 		setCurrentSuite: function(state, suite){
 			state.currentSuite = suite;
 		},
-		toggleSelectedGroup: function(state, benchmarkNames){
-			if(_.intersection(state.selectedBenchmarks, benchmarkNames).length === benchmarkNames.length){
+		toggleSelectedGroup: function(state, {version, suiteName, benchmarkNames}){
+			// Initialize when needed
+			if(!state.selectedBenchmarks[version]){
+				Vue.set(state.selectedBenchmarks, version, {});
+			}
+			if(!state.selectedBenchmarks[version][suiteName]){
+				Vue.set(state.selectedBenchmarks[version], suiteName, []);
+			}
+
+			if(_.intersection(state.selectedBenchmarks[version][suiteName], benchmarkNames).length === benchmarkNames.length){
 				// Deselect all
-				state.selectedBenchmarks = _.without(state.selectedBenchmarks, ...benchmarkNames);
+				Vue.set(state.selectedBenchmarks[version], suiteName, []);
 			}else{
 				// Select all
-				state.selectedBenchmarks = _.union(state.selectedBenchmarks, benchmarkNames);
+				Vue.set(state.selectedBenchmarks[version], suiteName, benchmarkNames);
 			}
 		},
-		toggleSelectedBenchmark: function(state, benchmarkName){
-			if(state.selectedBenchmarks.includes(benchmarkName)){
-				state.selectedBenchmarks = _.without(state.selectedBenchmarks, benchmarkName);
+		toggleSelectedBenchmark: function(state, {version, suiteName, benchmarkName}){
+			// Initialize when needed
+			if(!state.selectedBenchmarks[version]){
+				Vue.set(state.selectedBenchmarks, version, {});
+			}
+			if(!state.selectedBenchmarks[version][suiteName]){
+				Vue.set(state.selectedBenchmarks[version], suiteName, []);
+			}
+
+			if(state.selectedBenchmarks[version][suiteName].includes(benchmarkName)){
+				state.selectedBenchmarks[version][suiteName] = _.without(state.selectedBenchmarks[version][suiteName], benchmarkName);
 			}else{
-				state.selectedBenchmarks.push(benchmarkName);
+				state.selectedBenchmarks[version][suiteName].push(benchmarkName);
 			}
 		},
 		filterSelectedBenchmark: function(state, searchText){

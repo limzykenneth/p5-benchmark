@@ -13,6 +13,8 @@
 
 			:benchmark-name="benchmarkName"
 			:benchmarkID="benchmarkID(benchmarkName)"
+			:suite-name="suiteName"
+			:version="version"
 		></selection-list-item>
 	</div>
 </template>
@@ -44,9 +46,6 @@ export default{
 		}
 	},
 	computed: {
-		selectedBenchmarks: function(){
-			return this.$store.state.selectedBenchmarks;
-		},
 		suiteID: function(){
 			return `${this.version} ${this.suiteName}`;
 		}
@@ -58,12 +57,13 @@ export default{
 				.filter((benchmarkName) => {
 					return this.searchFilter(benchmarkName);
 				})
-				.map((benchmarkName) => {
-					return this.benchmarkID(benchmarkName);
-				})
 				.value();
 
-			this.$store.commit("toggleSelectedGroup", group);
+			this.$store.commit("toggleSelectedGroup", {
+				version:  this.version,
+				suiteName: this.suiteName,
+				benchmarkNames: group
+			});
 		},
 		benchmarkID: function(benchmarkName){
 			return `${this.suiteID} ${benchmarkName}`

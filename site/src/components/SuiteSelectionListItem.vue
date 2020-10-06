@@ -15,22 +15,30 @@ export default{
 			type: String,
 			required: true
 		},
-		benchmarkID: {
+		version: {
+			type: String,
+			required: true
+		},
+		suiteName: {
 			type: String,
 			required: true
 		}
 	},
 	computed: {
 		selectedBenchmarks: function(){
-			return this.$store.state.selectedBenchmarks;
+			return this.$store.state.selectedBenchmarks?.[this.version]?.[this.suiteName] || [];
 		},
 		isSelected: function(){
-			return this.$store.state.selectedBenchmarks.includes(this.benchmarkID);
+			return this.selectedBenchmarks.includes(this.benchmarkName);
 		}
 	},
 	methods: {
 		selectBenchmark: function(){
-			this.$store.commit("toggleSelectedBenchmark", this.benchmarkID);
+			this.$store.commit("toggleSelectedBenchmark", {
+				version: this.version,
+				suiteName: this.suiteName,
+				benchmarkName: this.benchmarkName
+			});
 		}
 	}
 };
