@@ -86,6 +86,11 @@ export default new Vuex.Store({
 			}else{
 				state.selectedBenchmarks.push(benchmarkName);
 			}
+		},
+		filterSelectedBenchmark: function(state, searchText){
+			state.selectedBenchmarks = state.selectedBenchmarks.filter((benchmarkName) => {
+				return benchmarkName.toLowerCase().includes(searchText.toLowerCase());
+			});
 		}
 	},
 	actions: {

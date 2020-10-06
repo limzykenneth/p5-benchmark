@@ -53,9 +53,17 @@ export default{
 	},
 	methods: {
 		selectGroup: function(){
-			this.$store.commit("toggleSelectedGroup", _.map(_.keys(this.suite), (benchmarkName) => {
-				return this.benchmarkID(benchmarkName);
-			}));
+			const group = _.chain(this.suite)
+				.keys()
+				.filter((benchmarkName) => {
+					return this.searchFilter(benchmarkName);
+				})
+				.map((benchmarkName) => {
+					return this.benchmarkID(benchmarkName);
+				})
+				.value();
+
+			this.$store.commit("toggleSelectedGroup", group);
 		},
 		benchmarkID: function(benchmarkName){
 			return `${this.suiteID} ${benchmarkName}`
