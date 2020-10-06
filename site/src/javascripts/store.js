@@ -7,22 +7,45 @@ export default new Vuex.Store({
 		benchmarks: {},
 		version: "",
 		versions: [],
-		currentSuite: ""
+		currentSuite: "",
+		selectedBenchmarks: []
 	},
 	getters: {
-		getResultsBySuites: function(state, getters){
+		getResultsBySuites: function(state){
+			const suite = state.benchmarks[state.version].results;
 			let initial = {};
-			_.each(getters.getCurrentBenchmarks.results, (benchmark) => {
+			_.each(suite, (benchmark) => {
 				initial[benchmark.suite] = initial[benchmark.suite] || {};
 				initial[benchmark.suite][benchmark.name] = [];
 			});
 
-			return _.reduce(getters.getCurrentBenchmarks.results, (col, benchmark) => {
+			return _.reduce(suite, (col, benchmark) => {
 				col[benchmark.suite][benchmark.name].push(benchmark);
 				col[benchmark.suite][benchmark.name] = _.sortBy(col[benchmark.suite][benchmark.name], "browser");
 
 				return col;
 			}, initial);
+		},
+		getResults: function(state){
+			const result = {};
+
+			state.versions.forEach((version) => {
+				const suite = state.benchmarks[version].results;
+				const initial = {};
+				_.each(suite, (benchmark) => {
+					initial[benchmark.suite] = initial[benchmark.suite] || {};
+					initial[benchmark.suite][benchmark.name] = [];
+				});
+
+				result[version] = _.reduce(suite, (col, benchmark) => {
+					col[benchmark.suite][benchmark.name].push(benchmark);
+					col[benchmark.suite][benchmark.name] = _.sortBy(col[benchmark.suite][benchmark.name], "browser");
+
+					return col;
+				}, initial);
+			});
+
+			return result;
 		},
 		getBrowsersList: function(state, getters){
 			return _.chain(getters.getCurrentBenchmarks.results)
@@ -47,6 +70,22 @@ export default new Vuex.Store({
 		},
 		setCurrentSuite: function(state, suite){
 			state.currentSuite = suite;
+		},
+		toggleSelectedGroup: function(state, benchmarkNames){
+			if(_.intersection(state.selectedBenchmarks, benchmarkNames).length === benchmarkNames.length){
+				// Deselect all
+				state.selectedBenchmarks = _.without(state.selectedBenchmarks, ...benchmarkNames);
+			}else{
+				// Select all
+				state.selectedBenchmarks = _.union(state.selectedBenchmarks, benchmarkNames);
+			}
+		},
+		toggleSelectedBenchmark: function(state, benchmarkName){
+			if(state.selectedBenchmarks.includes(benchmarkName)){
+				state.selectedBenchmarks = _.without(state.selectedBenchmarks, benchmarkName);
+			}else{
+				state.selectedBenchmarks.push(benchmarkName);
+			}
 		}
 	},
 	actions: {

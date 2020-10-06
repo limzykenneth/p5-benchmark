@@ -9,18 +9,22 @@
 		<section id="benchmarks">
 			<app-benchmark></app-benchmark>
 		</section>
+
+		<suite-selection></suite-selection>
 	</main>
 </template>
 
 <script>
 import AppBenchmark from "./Benchmark.vue";
 import AppControls from "./Controls.vue";
+import SuiteSelection from "./SuiteSelection.vue";
 
 export default{
 	name: "App",
 	components: {
 		"app-benchmark": AppBenchmark,
-		"app-controls": AppControls
+		"app-controls": AppControls,
+		"suite-selection": SuiteSelection
 	},
 	props: {}
 };
