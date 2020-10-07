@@ -1,15 +1,18 @@
 <template>
 	<article class="benchmark">
-		<div
-			v-for="(testCase, testName) in results"
-		>
-			<h4>Name: {{ testName }}</h4>
-			<h4>Version: {{ testCase.version }}</h4>
-			<p v-for="testResult in testCase.result">
-				{{ testResult.browser }}<br>
-				Operations per second: {{ testResult.opsPerSecond | round | formatNumber }}
-			</p>
-		</div>
+		<section class="results-container">
+			<div class="results"
+				v-for="(testCase, testName) in results"
+			>
+				<h4 class="result-name">Name: {{ testName }}</h4>
+				<h4 class="result-version">Version: {{ testCase.version }}</h4>
+				<p v-for="testResult in testCase.result">
+					{{ testResult.browser }}<br>
+					Operations per second: {{ testResult.opsPerSecond | round | formatNumber }}
+				</p>
+				<hr>
+			</div>
+		</section>
 
 		<benchmark-graph></benchmark-graph>
 	</article>
@@ -56,5 +59,17 @@ export default{
 	border: 1px solid black;
 	margin: 1rem;
 	padding: 1rem;
+
+	.results-container{
+		columns: 3;
+
+		.results{
+			break-inside: avoid;
+
+			.result-name, .result-version{
+				margin: 0;
+			}
+		}
+	}
 }
 </style>

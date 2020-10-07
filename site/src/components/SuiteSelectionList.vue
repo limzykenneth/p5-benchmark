@@ -79,6 +79,7 @@ export default{
 	margin: 1rem 0;
 	display: inline-block;
 	width: 100%;
+	break-inside: avoid;
 
 	.suite-name{
 		.list-item();

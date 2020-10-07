@@ -104,9 +104,7 @@ export default{
 				tooltips: {
 					callbacks: {
 						title: (tooltipItem) => {
-							const title = tooltipItem[0].xLabel[0];
-
-							return `${title}\nVersion: ${this.$store.state.version}`;
+							return `${tooltipItem[0].xLabel[0]}\nVersion: ${tooltipItem[0].xLabel[1]}`;
 						},
 						label: (tooltipItem, data) => {
 							let label = data.datasets[tooltipItem.datasetIndex].label || '';
