@@ -2,9 +2,10 @@
 	<article class="benchmark">
 		<section class="results-container">
 			<div class="results"
-				v-for="(testCase, testName) in results"
+				v-for="(testCase, i) in results"
+				:key="i"
 			>
-				<h4 class="result-name">Name: {{ testName }}</h4>
+				<h4 class="result-name">Name: {{ testCase.benchmarkName }}</h4>
 				<h4 class="result-version">Version: {{ testCase.version }}</h4>
 				<p v-for="testResult in testCase.result">
 					{{ testResult.browser }}<br>
@@ -36,14 +37,15 @@ export default{
 	},
 	computed: {
 		results: function(){
-			const res = {};
-			_.each(this.$store.getters.getFilteredResults, (suite, version) => {
+			const res = [];
+			_.each(this.$store.state.selectedBenchmarks, (suite, version) => {
 				_.each(suite, (benchmark, suiteName) => {
-					_.each(benchmark, (data, benchmarkName) => {
-						res[benchmarkName] = {
+					_.each(benchmark, (benchmarkName) => {
+						res.push({
+							benchmarkName,
 							version,
 							result: this.$store.getters.getResults[version][suiteName][benchmarkName]
-						}
+						});
 					});
 				});
 			});
