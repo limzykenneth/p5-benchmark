@@ -6,9 +6,15 @@
 			v-on:click.stop
 		>
 			<section id="selection-header">
-				<input type="text" name="selection-search" id="selection-search" placeholder="Search"
-					v-model="searchText"
-				>
+				<div>
+					<input type="text" name="selection-search" id="selection-search" placeholder="Search"
+						v-model="searchText"
+					>
+					<button id="clear-selection"
+						v-on:click="clearSelection"
+					>Clear All</button>
+				</div>
+
 				<button id="selection-exit"
 					v-on:click="selectionExit"
 				>X</button>
@@ -74,6 +80,9 @@ export default{
 		},
 		selectionExit: function(){
 			this.$store.commit("toggleSelectionOpen");
+		},
+		clearSelection: function(){
+			this.$store.commit("clearSelectedBenchmark");
 		}
 	}
 };
@@ -102,6 +111,18 @@ export default{
 			display: flex;
 			width: 100%;
 			justify-content: space-between;
+
+			#selection-search{
+				font-size: 1.2rem;
+				margin-right: 1rem;
+				height: 2.5rem;
+			}
+
+			#clear-selection{
+				cursor: pointer;
+				padding: 5px;
+				font-size: 1.2rem;
+			}
 
 			#selection-exit{
 				cursor: pointer;
