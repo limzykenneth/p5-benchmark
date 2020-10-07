@@ -46,7 +46,7 @@ export default{
 	},
 	methods: {
 		selectGroup: function(){
-			const group = _.chain(this.suite)
+			const benchmarkNames = _.chain(this.suite)
 				.keys()
 				.filter((benchmarkName) => {
 					return this.searchFilter(benchmarkName);
@@ -56,7 +56,7 @@ export default{
 			this.$store.commit("toggleSelectedGroup", {
 				version:  this.version,
 				suiteName: this.suiteName,
-				benchmarkNames: group
+				benchmarkNames
 			});
 		},
 		searchFilter: function(benchmarkName){

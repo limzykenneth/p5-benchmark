@@ -5,7 +5,9 @@
 				<input type="text" name="selection-search" id="selection-search" placeholder="Search"
 					v-model="searchText"
 				>
-				<span id="selection-exit">X</span>
+				<span id="selection-exit"
+					v-on:click="selectionExit"
+				>X</span>
 			</section>
 
 			<article class="version-container"
@@ -65,6 +67,9 @@ export default{
 			}else{
 				this.expandedVersions.push(version);
 			}
+		},
+		selectionExit: function(){
+			this.$store.commit("toggleSelectionOpen");
 		}
 	}
 };

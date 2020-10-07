@@ -10,7 +10,9 @@
 			<app-benchmark></app-benchmark>
 		</section>
 
-		<suite-selection></suite-selection>
+		<suite-selection
+			v-if="selectionOpen"
+		></suite-selection>
 	</main>
 </template>
 
@@ -26,7 +28,11 @@ export default{
 		"app-controls": AppControls,
 		"suite-selection": SuiteSelection
 	},
-	props: {}
+	computed: {
+		selectionOpen: function(){
+			return this.$store.state.selectionOpen;
+		}
+	}
 };
 </script>
 

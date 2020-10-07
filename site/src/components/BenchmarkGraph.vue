@@ -31,28 +31,39 @@ export default{
 		};
 	},
 	computed: {
-		suiteName: function(){
-			return this.$store.state.currentSuite;
-		},
-		suite: function(){
-			return this.$store.getters.getResultsBySuites[this.suiteName];
-		},
 		ctx: function(){
 			return this.$el.querySelector(".graph-canvas").getContext("2d");
 		},
 		datasets: function(){
-			return this.$store.getters.getBrowsersList.map((browser, i) => {
-				return _.reduce(this.suite, (col, benchmark) => {
-					benchmark.forEach((data) => {
-						if(data.browser === browser){
-							col.data.push(data.opsPerSecond);
-						}
+			const labels = _.flatten(_.map(this.$store.getters.getFilteredResults, (suite, version) => {
+				let res = [];
+				_.each(suite, (benchmark) => {
+					_.each(benchmark, (result, benchmarkName) => {
+						res.push([benchmarkName, version]);
+					});
+				});
+
+				return res;
+			}), 1);
+
+			const data = this.$store.getters.getBrowsersList.map((browser, i) => {
+				return _.reduce(this.$store.getters.getFilteredResults, (acc, suite) => {
+
+					_.each(suite, (benchmark) => {
+						_.each(benchmark, (result) => {
+							_.each(result, (data) => {
+								if(data.browser === browser){
+									acc.data.push(data.opsPerSecond);
+								}
+							});
+						});
 					});
 
-					col.backgroundColor = this.backgroundColors[i];
-					col.borderColor = this.borderColors[i];
 
-					return col;
+					acc.backgroundColor = this.backgroundColors[i];
+					acc.borderColor = this.borderColors[i];
+
+					return acc;
 				}, {
 					backgroundColor: this.backgroundColors[0],
 					borderColor: this.borderColors[0],
@@ -61,23 +72,17 @@ export default{
 					data: []
 				});
 			});
-		},
-		labels: function(){
-			return _.map(this.suite, (benchmark, key) => {
-				return [key, `Version: ${this.$store.state.version}`];
-			});
+
+			return {
+				data,
+				labels
+			};
 		}
 	},
 	watch: {
-		suiteName: function(val){
-			if(val !== ""){
-				this.chart.data.labels = this.labels;
-				this.chart.data.datasets = this.datasets;
-			}else{
-				this.chart.data.labels = [];
-				this.chart.data.datasets = [];
-			}
-
+		datasets: function(){
+			this.chart.data.labels = this.datasets.labels;
+			this.chart.data.datasets = this.datasets.data;
 			this.chart.update();
 		}
 	},
@@ -85,8 +90,8 @@ export default{
 		this.chart = new Chart(this.ctx, {
 			type: "bar",
 			data: {
-				labels: this.labels,
-				datasets: this.datasets
+				labels: this.datasets.labels,
+				datasets: this.datasets.data
 			},
 			options: {
 				scales: {

@@ -8,7 +8,8 @@ export default new Vuex.Store({
 		version: "",
 		versions: [],
 		currentSuite: "",
-		selectedBenchmarks: {}
+		selectedBenchmarks: {},
+		selectionOpen: true
 	},
 	getters: {
 		getResultsBySuites: function(state){
@@ -43,6 +44,24 @@ export default new Vuex.Store({
 
 					return col;
 				}, initial);
+			});
+
+			return result;
+		},
+		getFilteredResults: function(state, getters){
+			const result = {};
+
+			_.each(state.selectedBenchmarks, (suite, version) => {
+				result[version] = {};
+
+				_.each(suite, (benchmarkNames, suiteName) => {
+					result[version][suiteName] = {};
+
+					_.each(benchmarkNames, (benchmarkName) => {
+						result[version][suiteName][benchmarkName] = getters.getResults[version][suiteName][benchmarkName];
+					});
+
+				});
 			});
 
 			return result;
@@ -107,6 +126,9 @@ export default new Vuex.Store({
 			state.selectedBenchmarks = state.selectedBenchmarks.filter((benchmarkName) => {
 				return benchmarkName.toLowerCase().includes(searchText.toLowerCase());
 			});
+		},
+		toggleSelectionOpen: function(state){
+			state.selectionOpen = !state.selectionOpen;
 		}
 	},
 	actions: {
