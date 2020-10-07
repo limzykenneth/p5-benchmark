@@ -5,28 +5,12 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 	state: {
 		benchmarks: {},
-		version: "",
 		versions: [],
 		currentSuite: "",
 		selectedBenchmarks: {},
 		selectionOpen: true
 	},
 	getters: {
-		getResultsBySuites: function(state){
-			const suite = state.benchmarks[state.version].results;
-			let initial = {};
-			_.each(suite, (benchmark) => {
-				initial[benchmark.suite] = initial[benchmark.suite] || {};
-				initial[benchmark.suite][benchmark.name] = [];
-			});
-
-			return _.reduce(suite, (col, benchmark) => {
-				col[benchmark.suite][benchmark.name].push(benchmark);
-				col[benchmark.suite][benchmark.name] = _.sortBy(col[benchmark.suite][benchmark.name], "browser");
-
-				return col;
-			}, initial);
-		},
 		getResults: function(state){
 			const result = {};
 
@@ -67,28 +51,26 @@ export default new Vuex.Store({
 			return result;
 		},
 		getBrowsersList: function(state, getters){
-			return _.chain(getters.getCurrentBenchmarks.results)
-				.map((result) => result.browser.split(" ")[0])
-				.uniq()
-				.sortBy()
-				.value();
-		},
-		getCurrentBenchmarks: function(state){
-			return state.benchmarks[state.version] || {};
+			let browsers = [];
+			_.each(getters.getFilteredResults, (suite) => {
+				_.each(suite, (benchmarks) => {
+					_.each(benchmarks, (data) => {
+						_.each(data, (d) => {
+							browsers.push(d.browser.split(" ")[0]);
+						});
+					});
+				});
+			});
+
+			return _.uniq(browsers);
 		}
 	},
 	mutations: {
 		setBenchmarks: function(state, options){
 			Vue.set(state.benchmarks, options.version, options.benchmarks);
 		},
-		setVersion: function(state, version){
-			state.version = version;
-		},
 		setVersions: function(state, versions){
 			state.versions = versions;
-		},
-		setCurrentSuite: function(state, suite){
-			state.currentSuite = suite;
 		},
 		toggleSelectedGroup: function(state, {version, suiteName, benchmarkNames}){
 			// Initialize when needed
@@ -127,6 +109,9 @@ export default new Vuex.Store({
 				return benchmarkName.toLowerCase().includes(searchText.toLowerCase());
 			});
 		},
+		clearSelectedBenchmark: function(state){
+			state.selectedBenchmarks = {};
+		},
 		toggleSelectionOpen: function(state){
 			state.selectionOpen = !state.selectionOpen;
 		}
@@ -146,9 +131,6 @@ export default new Vuex.Store({
 					benchmarks
 				});
 			}
-
-			store.commit("setVersion", version);
-			store.commit("setCurrentSuite", _.keys(store.getters.getResultsBySuites)[0]);
 		},
 		fetchVersions: async function(store){
 			let versions = [];
@@ -176,7 +158,6 @@ export default new Vuex.Store({
 					});
 				}
 			});
-			store.commit("setVersion", versions[0]);
 		}
 	}
 });

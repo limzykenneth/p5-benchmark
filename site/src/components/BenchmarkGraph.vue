@@ -73,8 +73,6 @@ export default{
 				});
 			});
 
-			console.log(data, labels);
-
 			return {
 				data,
 				labels

@@ -1,9 +1,10 @@
 <template>
 	<main id="page-container">
 		<header id="page-header">
-			<h1>p5.js Benchmarks</h1>
-
-			<app-controls></app-controls>
+			<h1 id="site-title">p5.js Benchmarks</h1>
+			<h2 id="select-benchmark"
+				v-on:click="openSelection"
+			>Choose Benchmarks</h2>
 		</header>
 
 		<section id="benchmarks">
@@ -18,19 +19,22 @@
 
 <script>
 import AppBenchmark from "./Benchmark.vue";
-import AppControls from "./Controls.vue";
 import SuiteSelection from "./SuiteSelection.vue";
 
 export default{
 	name: "App",
 	components: {
 		"app-benchmark": AppBenchmark,
-		"app-controls": AppControls,
 		"suite-selection": SuiteSelection
 	},
 	computed: {
 		selectionOpen: function(){
 			return this.$store.state.selectionOpen;
+		}
+	},
+	methods: {
+		openSelection: function(){
+			this.$store.commit("toggleSelectionOpen");
 		}
 	}
 };
@@ -50,10 +54,15 @@ export default{
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		align-items: center;
 		background: #ed225d;
 		color: white;
 
-		h1{
+		#site-title{
+			margin: 0;
+		}
+
+		#select-benchmark{
 			margin: 0;
 		}
 	}
