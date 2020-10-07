@@ -1,26 +1,17 @@
 <template>
 	<article class="benchmark">
-		<h2>p5.js version: {{ version }}</h2>
-		<h2>Date: {{ date }}</h2>
-
-		<div class="result"
-			:id="currentSuite"
+		<div
+			v-for="(testCase, testName) in results"
 		>
-			<h3>Suite: {{ currentSuite }}</h3>
-
-			<div
-				v-for="(testCase, testName) in suites[currentSuite]"
-				:key="testName"
-			>
-				<h4>Name: {{ testName }}</h4>
-				<p v-for="testResult in testCase">
-					{{ testResult.browser }}<br>
-					Operations per second: {{ testResult.opsPerSecond | round | formatNumber }}
-				</p>
-			</div>
-
-			<benchmark-graph></benchmark-graph>
+			<h4>Name: {{ testName }}</h4>
+			<h4>Version: {{ testCase.version }}</h4>
+			<p v-for="testResult in testCase.result">
+				{{ testResult.browser }}<br>
+				Operations per second: {{ testResult.opsPerSecond | round | formatNumber }}
+			</p>
 		</div>
+
+		<benchmark-graph></benchmark-graph>
 	</article>
 </template>
 
@@ -40,40 +31,30 @@ export default{
 			return value.toLocaleString();
 		}
 	},
-	props: {},
 	computed: {
-		suites: function(){
-			return this.$store.getters.getResultsBySuites;
-		},
-		browsersList: function(){
-			return this.$store.getters.getBrowsersList;
-		},
-		date: function(){
-			if(!_.isEmpty(this.$store.getters.getCurrentBenchmarks)){
-				return moment(this.$store.getters.getCurrentBenchmarks.meta.date)
-					.format("MMMM Do YYYY, h:mm:ss a");
-			}else{
-				return "";
-			}
-		},
-		version: function(){
-			return this.$store.state.version;
-		},
-		currentSuite: function(){
-			return this.$store.state.currentSuite;
+		results: function(){
+			const res = {};
+			_.each(this.$store.getters.getFilteredResults, (suite, version) => {
+				_.each(suite, (benchmark, suiteName) => {
+					_.each(benchmark, (data, benchmarkName) => {
+						res[benchmarkName] = {
+							version,
+							result: this.$store.getters.getResults[version][suiteName][benchmarkName]
+						}
+					});
+				});
+			});
+
+			return res;
 		}
 	}
 };
 </script>
 
 <style lang="less" scoped>
-#benchmarks{
-	.benchmark{
-		.result{
-			border: 1px solid black;
-			margin: 1px;
-			padding: 1rem;
-		}
-	}
+.benchmark{
+	border: 1px solid black;
+	margin: 1rem;
+	padding: 1rem;
 }
 </style>
