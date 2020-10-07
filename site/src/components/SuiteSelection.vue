@@ -1,13 +1,17 @@
 <template>
-	<section id="selection-container">
-		<section id="selection">
+	<section id="selection-container"
+		v-on:click="selectionExit"
+	>
+		<section id="selection"
+			v-on:click.stop
+		>
 			<section id="selection-header">
 				<input type="text" name="selection-search" id="selection-search" placeholder="Search"
 					v-model="searchText"
 				>
-				<span id="selection-exit"
+				<button id="selection-exit"
 					v-on:click="selectionExit"
-				>X</span>
+				>X</button>
 			</section>
 
 			<article class="version-container"
@@ -101,6 +105,9 @@ export default{
 
 			#selection-exit{
 				cursor: pointer;
+				padding: 5px;
+				font-size: 1.2rem;
+				font-weight: bold;
 			}
 		}
 

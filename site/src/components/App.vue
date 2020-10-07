@@ -2,9 +2,9 @@
 	<main id="page-container">
 		<header id="page-header">
 			<h1 id="site-title">p5.js Benchmarks</h1>
-			<h2 id="select-benchmark"
+			<button id="select-benchmark"
 				v-on:click="openSelection"
-			>Choose Benchmarks</h2>
+			>Choose Benchmarks</button>
 		</header>
 
 		<section id="benchmarks">
@@ -49,7 +49,7 @@ export default{
 		height: 5rem;
 		top: 0px;
 		left: 0;
-		padding: 1.5rem 5rem;
+		padding: 1.5rem 6rem;
 		position: fixed;
 		display: flex;
 		flex-direction: row;
@@ -64,6 +64,9 @@ export default{
 
 		#select-benchmark{
 			margin: 0;
+			padding: 5px;
+			font-size: 1.2rem;
+			cursor: pointer;
 		}
 	}
 }
