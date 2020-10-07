@@ -20,25 +20,52 @@
 				>X</button>
 			</section>
 
-			<article class="version-container"
-				v-for="(version, i) in versions"
-				:key="i"
-			>
-				<h1 class="version-title"
-					v-on:click="toggleVersion(version)"
-				><span>{{ isExpanded(version) ? "-" : "+" }}</span> {{ version }}</h1>
-				<ul class="version-list">
-					<version-list
-						v-for="(suite, suiteName) in suites[version]"
-						v-if="isExpanded(version)"
-						:key="suiteName"
-						:suite="suite"
-						:suite-name="suiteName"
-						:version="version"
-						:search-text="searchText"
-					></version-list>
-				</ul>
-			</article>
+			<div id="selection-content">
+				<section id="version-container">
+					<article
+						v-for="(version, i) in versions"
+						:key="i"
+					>
+						<h1 class="version-title"
+							v-on:click="toggleVersion(version)"
+						><span>{{ isExpanded(version) ? "-" : "+" }}</span> {{ version }}</h1>
+						<ul class="version-list">
+							<version-list
+								v-for="(suite, suiteName) in suites[version]"
+								v-if="isExpanded(version)"
+								:key="suiteName"
+								:suite="suite"
+								:suite-name="suiteName"
+								:version="version"
+								:search-text="searchText"
+							></version-list>
+						</ul>
+					</article>
+				</section>
+				<section id="selected">
+					<h2 id="selected-title">Selected Benchmarks</h2>
+					<ul id="selected-list">
+						<div class="version-section"
+							v-for="(suite, version) in selectedBenchmarks"
+							:key="version"
+						>
+							<h3>{{ version }}</h3>
+
+							<div class="suite-section"
+								v-for="(benchmarks, suiteName) in suite"
+								:key="suiteName"
+							>
+								<h4>{{ suiteName }}</h4>
+
+								<li
+									v-for="(benchmarkName, i) in benchmarks"
+									:key="i"
+								>{{ benchmarkName }}</li>
+							</div>
+						</div>
+					</ul>
+				</section>
+			</div>
 		</section>
 	</section>
 </template>
@@ -63,6 +90,9 @@ export default{
 		},
 		suites: function(){
 			return this.$store.getters.getResults;
+		},
+		selectedBenchmarks: function(){
+			return this.$store.state.selectedBenchmarks;
 		}
 	},
 	methods: {
@@ -130,17 +160,54 @@ export default{
 			}
 		}
 
-		.version-title{
-			margin: 1rem 0;
-			cursor: pointer;
-		}
+		#selection-content{
+			display: flex;
+			margin-top: 1rem;
 
-		.version-list{
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			columns: 3 200px;
-			column-gap: 1rem;
+			#version-container{
+				width: 75%;
+
+				.version-title{
+					margin: 1rem 0;
+					cursor: pointer;
+				}
+
+				.version-list{
+					margin: 0;
+					padding: 0;
+					list-style: none;
+					columns: 3 200px;
+					column-gap: 1rem;
+				}
+			}
+
+			#selected{
+				width: 25%;
+				height: 100%;
+				padding: 1rem;
+				background: #d9d9d9;
+
+				#selected-title{
+					margin: 0.5rem 0;
+				}
+
+				#selected-list{
+					list-style: none;
+					padding: 0;
+
+					h3, h4{
+						margin: 0;
+					}
+
+					.version-section{
+						margin-bottom: 1.5rem;
+
+						.suite-section{
+							margin-bottom: 0.5rem;
+						}
+					}
+				}
+			}
 		}
 	}
 }
