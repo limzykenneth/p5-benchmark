@@ -41,6 +41,8 @@ export default{
 </script>
 
 <style lang="less" scoped>
+@import "../stylesheets/mixin.less";
+
 #page-container{
 	padding: 5rem;
 
@@ -55,7 +57,7 @@ export default{
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		background: #ed225d;
+		background: @p5-pink;
 		color: white;
 
 		#site-title{
@@ -63,10 +65,11 @@ export default{
 		}
 
 		#select-benchmark{
-			margin: 0;
-			padding: 5px;
-			font-size: 1.2rem;
-			cursor: pointer;
+			.button();
+
+			&:hover{
+				background-color: darken(@p5-pink, 10%);
+			}
 		}
 	}
 }

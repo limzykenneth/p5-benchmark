@@ -89,6 +89,8 @@ export default{
 </script>
 
 <style lang="less" scoped>
+@import "../stylesheets/mixin.less";
+
 #selection-container{
 	padding: 50px;
 	width: 100%;
@@ -119,15 +121,11 @@ export default{
 			}
 
 			#clear-selection{
-				cursor: pointer;
-				padding: 5px;
-				font-size: 1.2rem;
+				.button();
 			}
 
 			#selection-exit{
-				cursor: pointer;
-				padding: 5px;
-				font-size: 1.2rem;
+				.button();
 				font-weight: bold;
 			}
 		}

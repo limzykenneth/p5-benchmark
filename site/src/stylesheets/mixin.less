@@ -1,3 +1,5 @@
+@p5-pink: #ed225d;
+
 .list-item(){
 	margin: 0;
 	cursor: pointer;
@@ -11,5 +13,19 @@
 
 	&.active{
 		background: rgba(153, 239, 255, 0.5);
+	}
+}
+
+.button(){
+	border: none;
+	cursor: pointer;
+	font-size: 1.2rem;
+	background-color: #d9d9d9;
+	color: #333;
+	padding: 10px;
+
+	&:hover{
+		background-color: @p5-pink;
+		color: white;
 	}
 }
