@@ -52,7 +52,7 @@ export default{
 					_.each(suite, (benchmark) => {
 						_.each(benchmark, (result) => {
 							_.each(result, (data) => {
-								if(data.browser === browser){
+								if(data.browser.split(" ")[0] === browser){
 									acc.data.push(data.opsPerSecond);
 								}
 							});
@@ -72,6 +72,8 @@ export default{
 					data: []
 				});
 			});
+
+			console.log(data, labels);
 
 			return {
 				data,

@@ -68,7 +68,7 @@ export default new Vuex.Store({
 		},
 		getBrowsersList: function(state, getters){
 			return _.chain(getters.getCurrentBenchmarks.results)
-				.map((result) => result.browser)
+				.map((result) => result.browser.split(" ")[0])
 				.uniq()
 				.sortBy()
 				.value();
