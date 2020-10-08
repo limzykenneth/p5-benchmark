@@ -37,20 +37,19 @@ export default{
 	},
 	computed: {
 		results: function(){
-			const res = [];
-			_.each(this.$store.state.selectedBenchmarks, (suite, version) => {
+			return _.reduce(this.$store.state.selectedBenchmarks, (acc, suite, version) => {
 				_.each(suite, (benchmark, suiteName) => {
 					_.each(benchmark, (benchmarkName) => {
-						res.push({
+						acc.push({
 							benchmarkName,
 							version,
 							result: this.$store.getters.getResults[version][suiteName][benchmarkName]
 						});
 					});
 				});
-			});
 
-			return res;
+				return acc;
+			}, []);
 		}
 	}
 };
