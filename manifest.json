@@ -1,7 +1,7 @@
 {
   "name": "",
   "short_name": "",
-  "description": "Boilerplate for starting a static site project",
+  "description": "Website for viewing result of p5.js benchmakrs",
   "dir": "auto",
   "lang": "en-GB",
   "display": "standalone",
