@@ -1,7 +1,7 @@
 {
-  "name": "static-site-boilerplate",
-  "version": "0.1.0",
-  "description": "Boilerplate for starting a static site project",
+  "name": "p5.js-benchmark-site",
+  "version": "1.0.0",
+  "description": "Website for viewing result of p5.js benchmakrs",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
