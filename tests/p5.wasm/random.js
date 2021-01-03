@@ -13,8 +13,8 @@
 		});
 	});
 
-	suite("random_seed", () => {
-		benchmark("p5.wasm.random", () => {
+	suite("randomSeed", () => {
+		benchmark("p5.wasm.random_seed", () => {
 			wasm.random_seed(1.2);
 		});
 	});

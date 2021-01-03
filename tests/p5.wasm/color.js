@@ -140,7 +140,7 @@
 		let c1, c2;
 
 		benchmark("p5.wasm.lerp_color", () => {
-			let c = wasm.lerp_color(c1, c2);
+			let c = wasm.lerp_color(c1, c2, 0.5);
 			c.free();
 		}, {
 			setup(){
@@ -154,9 +154,53 @@
 		});
 	});
 
-	// suite("Color.toString()", () => {
-		
-	// });
+	suite("Color.toString()", () => {
+		let c;
+
+		benchmark("p5.wasm.to_string() rgba", () => {
+			c.to_string("rgba");
+		}, {
+			setup(){
+				c = wasm.color(100, 200, 255, 50);
+			},
+			teardown(){
+				c.free();
+			}
+		});
+
+		benchmark("p5.wasm.to_string() #rrggbbaa", () => {
+			c.to_string("#rrggbbaa");
+		}, {
+			setup(){
+				c = wasm.color(100, 200, 255, 50);
+			},
+			teardown(){
+				c.free();
+			}
+		});
+
+		benchmark("p5.wasm.to_string() hsba", () => {
+			c.to_string("hsba");
+		}, {
+			setup(){
+				c = wasm.color(100, 200, 255, 50);
+			},
+			teardown(){
+				c.free();
+			}
+		});
+
+		benchmark("p5.wasm.to_string() hsla", () => {
+			c.to_string("hsla");
+		}, {
+			setup(){
+				c = wasm.color(100, 200, 255, 50);
+			},
+			teardown(){
+				c.free();
+			}
+		});		
+	});
 
 	suite("Color.setRed()", () => {
 		let c;
