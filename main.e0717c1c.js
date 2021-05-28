@@ -27,4 +27,4 @@ var t=arguments[3];function e(t){if(Number(t.version.split(".")[0])>=2)t.mixin({
 },{"vue":"NtAQ","vuex":"AwB4"}],"fzbs":[function(require,module,exports) {
 "use strict";var e=n(require("vue")),t=n(require("../components/App.vue")),r=n(require("./store.js"));function n(e){return e&&e.__esModule?e:{default:e}}new e.default({el:"#page-content",store:r.default,beforeCreate:async function(){await this.$store.dispatch("fetchVersions")},render:function(e){return e(t.default)}});
 },{"vue":"NtAQ","../components/App.vue":"YLIC","./store.js":"H56g"}]},{},["fzbs"], null)
-//# sourceMappingURL=main.6cedc994.js.map
+//# sourceMappingURL=main.e0717c1c.js.map
